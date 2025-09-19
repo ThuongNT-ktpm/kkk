@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HSK 3 Vocabulary Quiz</title>
+    <style>
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-card: #ffffff;
+        --text-primary: #2c3e50;
+        --text-secondary: #666;
+        --accent: #3498db;
+        --success: #2ecc71;
+        --error: #e74c3c;
+        --warning: #f39c12;
+        --border: #e9ecef;
+        --shadow: rgba(0, 0, 0, 0.1);
+      }
+
+      [data-theme="dark"] {
+        --bg-primary: #1a1a1a;
+        --bg-secondary: #2d2d2d;
+        --bg-card: #333333;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --accent: #4a9eff;
+        --success: #00d084;
+        --error: #ff6b6b;
+        --warning: #ffa726;
+        --border: #444444;
+        --shadow: rgba(0, 0, 0, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+
+      body {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        transition: all 0.3s ease;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        background: var(--bg-primary);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Loading screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-primary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid var(--border);
+        border-top: 4px solid var(--accent);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+
+      .loading-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .error-message {
+        background: var(--error);
+        color: white;
+        padding: 16px;
+        border-radius: 8px;
+        margin: 16px;
+        text-align: center;
+        display: none;
+      }
+
+      /* Header */
+      .header {
+        background: var(--accent);
+        color: white;
+        padding: 12px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px var(--shadow);
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .title {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      .theme-toggle {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .subtitle {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      /* Quick Stats */
+      .quick-stats {
+        display: flex;
+        justify-content: space-around;
+        background: var(--bg-secondary);
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat-item {
+        text-align: center;
+        flex: 1;
+      }
+
+      .stat-number {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--accent);
+      }
+
+      .stat-label {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        margin-top: 2px;
+      }
+
+      /* Progress Bar */
+      .progress-container {
+        background: var(--bg-secondary);
+        height: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--success), var(--accent));
+        width: 0%;
+        transition: width 0.3s ease;
+        position: relative;
+      }
+
+      /* Main Content */
+      .main-content {
+        flex: 1;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Controls */
+      .top-controls {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      .control-group {
+        display: flex;
+        gap: 4px;
+        background: var(--bg-card);
+        border-radius: 8px;
+        padding: 4px;
+        border: 1px solid var(--border);
+      }
+
+      .mode-btn,
+      .batch-btn,
+      .action-btn {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: transparent;
+        color: var(--text-secondary);
+        white-space: nowrap;
+      }
+
+      .mode-btn.active,
+      .batch-btn.active {
+        background: var(--accent);
+        color: white;
+        box-shadow: 0 2px 4px var(--shadow);
+      }
+
+      .action-btn {
+        background: var(--accent);
+        color: white;
+      }
+
+      .secondary-btn {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+      }
+
+      /* Question Area */
+      .question-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+        background: var(--bg-card);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px var(--shadow);
+        margin-bottom: 16px;
+        border: 1px solid var(--border);
+      }
+
+      .question {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        color: var(--text-primary);
+        margin-bottom: 24px;
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.2;
+      }
+
+      .feedback {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+      }
+
+      .feedback.correct {
+        background: rgba(46, 204, 113, 0.1);
+        color: var(--success);
+        border: 1px solid var(--success);
+      }
+
+      .feedback.incorrect {
+        background: rgba(231, 76, 60, 0.1);
+        color: var(--error);
+        border: 1px solid var(--error);
+      }
+
+      /* Options */
+      .options {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .option {
+        padding: 16px;
+        background: var(--bg-secondary);
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        color: var(--text-primary);
+      }
+
+      .option:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--shadow);
+      }
+
+      .option:active {
+        transform: scale(0.98);
+      }
+
+      .option.selected {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+        transform: scale(1.02);
+      }
+
+      .option.correct {
+        background: var(--success);
+        color: white;
+        border-color: var(--success);
+        animation: pulse 0.6s ease;
+      }
+
+      .option.incorrect {
+        background: var(--error);
+        color: white;
+        border-color: var(--error);
+        animation: shake 0.5s ease;
+      }
+
+      /* Review Section */
+      .review-section {
+        margin-top: 20px;
+        padding: 16px;
+        background: var(--bg-card);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px var(--shadow);
+        border: 1px solid var(--border);
+        display: none;
+      }
+
+      .review-header {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .review-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .review-item {
+        padding: 12px;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+
+      .review-chinese {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      .review-pinyin {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin-bottom: 4px;
+      }
+
+      .review-english {
+        font-size: 1rem;
+        color: var(--text-primary);
+      }
+
+      .review-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 16px;
+        gap: 8px;
+      }
+
+      /* Completion Screen */
+      .completion-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
+      }
+
+      .completion-content {
+        background: var(--bg-card);
+        padding: 24px;
+        border-radius: 12px;
+        text-align: center;
+        max-width: 90%;
+        width: 400px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .completion-title {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+      }
+
+      .completion-stats {
+        margin-bottom: 24px;
+      }
+
+      .completion-stat {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        padding: 4px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      /* Batch Navigation */
+      .batch-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+        padding: 12px;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+
+      .batch-info {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      .batch-buttons {
+        display: flex;
+        gap: 8px;
+      }
+
+      /* Progress Overview */
+      .progress-overview {
+        margin-top: 16px;
+        padding: 16px;
+        background: var(--bg-card);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px var(--shadow);
+        border: 1px solid var(--border);
+        display: none;
+      }
+
+      .progress-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+      }
+
+      .batch-progress {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 8px;
+      }
+
+      .batch-progress-item {
+        padding: 8px;
+        background: var(--bg-secondary);
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .batch-progress-item.current {
+        background: var(--accent);
+        color: white;
+      }
+
+      .batch-progress-item.completed {
+        background: var(--success);
+        color: white;
+      }
+
+      .batch-progress-item.review {
+        background: var(--warning);
+        color: white;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-8px);
+        }
+        75% {
+          transform: translateX(8px);
+        }
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .subtitle {
+          display: none;
+        }
+
+        .question {
+          font-size: 2rem;
+          margin-bottom: 20px;
+        }
+
+        .option {
+          font-size: 1rem;
+          padding: 14px;
+        }
+
+        .review-list {
+          grid-template-columns: 1fr;
+        }
+
+        .top-controls {
+          flex-direction: column;
+        }
+
+        .batch-navigation {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .batch-buttons {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header {
+          padding: 8px 12px;
+        }
+
+        .title {
+          font-size: 1.2rem;
+        }
+
+        .main-content {
+          padding: 12px;
+        }
+
+        .question-container {
+          padding: 16px;
+          min-height: 250px;
+        }
+
+        .question {
+          font-size: 1.8rem;
+          min-height: 50px;
+        }
+
+        .options {
+          gap: 8px;
+        }
+
+        .option {
+          padding: 12px;
+          font-size: 0.95rem;
+        }
+
+        .review-chinese {
+          font-size: 1.3rem;
+        }
+
+        .batch-progress {
+          grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body data-theme="light">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading HSK vocabulary...</div>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-message" id="error-message">
+      Failed to load vocabulary. Please check that the hsk3.json file is in the
+      correct location.
+    </div>
+
+    <div class="container" style="display: none" id="main-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-top">
+          <h1 class="title">HSK 3 Quiz</h1>
+          <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </div>
+        <p class="subtitle">
+          Match Chinese characters to pinyin and Vietnamese translations
+        </p>
+      </header>
+
+      <!-- Quick Stats -->
+      <div class="quick-stats">
+        <div class="stat-item">
+          <div class="stat-number" id="current-question">1</div>
+          <div class="stat-label">Current</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="correct-count">0</div>
+          <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="wrong-count">0</div>
+          <div class="stat-label">Wrong</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="accuracy">0%</div>
+          <div class="stat-label">Accuracy</div>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Controls -->
+        <div class="top-controls">
+          <div class="control-group">
+            <button class="mode-btn active" id="mode-pinyin">🔤 Pinyin</button>
+            <button class="mode-btn" id="mode-english">Tiếng Việt</button>
+          </div>
+          <div class="control-group">
+            <button class="batch-btn" data-size="25">25</button>
+            <button class="batch-btn active" data-size="50">50</button>
+            <button class="batch-btn" data-size="100">100</button>
+            <button class="batch-btn" data-size="all">All</button>
+          </div>
+          <div class="control-group">
+            <button
+              class="action-btn secondary-btn"
+              id="review-wrong-btn"
+              style="display: none"
+            >
+              📝 Review Wrong(xem lỗi sai nhá Thư)
+            </button>
+            <button class="action-btn secondary-btn" id="progress-overview-btn">
+              📊 Progress(Tiến trình học của Thư)
+            </button>
+            <button class="action-btn secondary-btn" id="save-progress-btn">
+              💾 Save(Lưu lại)
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Container -->
+        <div class="question-container fade-in">
+          <div class="question" id="question">Loading...</div>
+          <div class="feedback" id="feedback"></div>
+          <div class="options" id="options"></div>
+        </div>
+
+        <!-- Batch Navigation -->
+        <div class="batch-navigation">
+          <div class="batch-info" id="batch-info">Batch 1 of 1</div>
+          <div class="batch-buttons">
+            <button
+              class="action-btn secondary-btn"
+              id="prev-batch-btn"
+              disabled
+            >
+              Previous Batch
+            </button>
+            <button class="action-btn" id="next-batch-btn">Next Batch</button>
+          </div>
+        </div>
+
+        <!-- Review Section -->
+        <div class="review-section" id="review-section">
+          <div class="review-header">
+            <span>Words to Review</span>
+            <button class="action-btn secondary-btn" id="close-review-btn">
+              Close
+            </button>
+          </div>
+          <div class="review-list" id="review-list"></div>
+          <div class="review-actions">
+            <button class="action-btn secondary-btn" id="practice-review-btn">
+              Practice These Words
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="progress-overview" id="progress-overview">
+          <div class="progress-title">Batch Progress Overview</div>
+          <div class="batch-progress" id="batch-progress"></div>
+          <div class="review-actions">
+            <button class="action-btn secondary-btn" id="close-progress-btn">
+              Close
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Completion Screen -->
+    <div class="completion-screen" id="completion-screen">
+      <div class="completion-content">
+        <h2 class="completion-title">Batch Complete!</h2>
+        <div class="completion-stats">
+          <div class="completion-stat">
+            <span>Total Questions:</span>
+            <span id="completion-total">0</span>
+          </div>
+          <div class="completion-stat">
+            <span>Correct Answers:</span>
+            <span id="completion-correct">0</span>
+          </div>
+          <div class="completion-stat">
+            <span>Wrong Answers:</span>
+            <span id="completion-wrong">0</span>
+          </div>
+          <div class="completion-stat">
+            <span>Accuracy:</span>
+            <span id="completion-accuracy">0%</span>
+          </div>
+        </div>
+        <div class="review-actions">
+          <button class="action-btn secondary-btn" id="completion-review-btn">
+            Review Wrong Answers
+          </button>
+          <button class="action-btn" id="completion-next-batch-btn">
+            Next Batch
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Global variables
+      let originalWords = [];
+      let currentBatch = 0;
+      let batchSize = 50;
+      let currentBatchWords = [];
+      let currentIndex = 0;
+      let correctAnswers = 0;
+      let wrongAnswers = [];
+      let totalAnswered = 0;
+      let isPinyinMode = true;
+      let selectedOption = null;
+      let isReviewMode = false;
+      let reviewWords = [];
+      let completedBatches = [];
+      let batchPerformance = {};
+      let totalWordsCount = 0;
+      let similarWordsMap = {};
+
+      // DOM elements
+      const questionEl = document.getElementById("question");
+      const optionsEl = document.getElementById("options");
+      const currentQuestionEl = document.getElementById("current-question");
+      const correctCountEl = document.getElementById("correct-count");
+      const wrongCountEl = document.getElementById("wrong-count");
+      const accuracyEl = document.getElementById("accuracy");
+      const progressBar = document.getElementById("progress-bar");
+      const feedbackEl = document.getElementById("feedback");
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      const loadingScreen = document.getElementById("loading-screen");
+      const errorMessage = document.getElementById("error-message");
+      const mainContainer = document.getElementById("main-container");
+      const reviewSection = document.getElementById("review-section");
+      const reviewList = document.getElementById("review-list");
+      const reviewWrongBtn = document.getElementById("review-wrong-btn");
+      const closeReviewBtn = document.getElementById("close-review-btn");
+      const practiceReviewBtn = document.getElementById("practice-review-btn");
+      const completionScreen = document.getElementById("completion-screen");
+      const completionTotal = document.getElementById("completion-total");
+      const completionCorrect = document.getElementById("completion-correct");
+      const completionWrong = document.getElementById("completion-wrong");
+      const completionAccuracy = document.getElementById("completion-accuracy");
+      const completionReviewBtn = document.getElementById(
+        "completion-review-btn"
+      );
+      const completionNextBatchBtn = document.getElementById(
+        "completion-next-batch-btn"
+      );
+      const prevBatchBtn = document.getElementById("prev-batch-btn");
+      const nextBatchBtn = document.getElementById("next-batch-btn");
+      const batchInfo = document.getElementById("batch-info");
+      const progressOverview = document.getElementById("progress-overview");
+      const progressOverviewBtn = document.getElementById(
+        "progress-overview-btn"
+      );
+      const closeProgressBtn = document.getElementById("close-progress-btn");
+      const batchProgress = document.getElementById("batch-progress");
+      const saveProgressBtn = document.getElementById("save-progress-btn");
+
+      // Load vocabulary from JSON file
+      async function loadVocabulary() {
+        try {
+          const response = await fetch("./hsk3.json");
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          // Validate the data structure
+          if (!Array.isArray(data.words)) {
+            throw new Error("Invalid data structure: expected array of words");
+          }
+
+          // Validate each word entry
+          data.words.forEach((word, index) => {
+            if (!word.chinese || !word.pinyin || !word.english) {
+              throw new Error(
+                `Invalid word entry at index ${index}: missing required fields`
+              );
+            }
+          });
+
+          originalWords = data.words;
+          totalWordsCount = data.totalWords || data.words.length;
+
+          // Process the word list to interleave two alphabetical lists
+          arrangeWords();
+
+          // Precompute similar words for each word
+          precomputeSimilarWords();
+
+          // Update title with level info if provided
+          if (data.level) {
+            document.querySelector(
+              ".title"
+            ).textContent = `HSK ${data.level} Quiz`;
+            document.querySelector(".subtitle").textContent = `${
+              data.description ||
+              "Match Chinese characters to pinyin and English translations"
+            }`;
+          }
+
+          return true;
+        } catch (error) {
+          console.error("Failed to load vocabulary:", error);
+          showError(`Failed to load vocabulary: ${error.message}`);
+          return false;
+        }
+      }
+
+      // Precompute similar words for each word
+      function precomputeSimilarWords() {
+        // Create a map of pinyin to words (without tones for matching)
+        const pinyinMap = {};
+
+        originalWords.forEach((word) => {
+          // Remove tones from pinyin for better matching
+          const basePinyin = word.pinyin
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+            .replace(/[0-9]/g, "") // Remove tone numbers
+            .toLowerCase();
+
+          if (!pinyinMap[basePinyin]) {
+            pinyinMap[basePinyin] = [];
+          }
+          pinyinMap[basePinyin].push(word);
+        });
+
+        // For each word, find similar words
+        originalWords.forEach((word) => {
+          const basePinyin = word.pinyin
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[0-9]/g, "")
+            .toLowerCase();
+
+          // Find words with similar pinyin (same initial or final)
+          const similarWords = [];
+
+          // Check for exact pinyin matches (without tones)
+          if (pinyinMap[basePinyin]) {
+            pinyinMap[basePinyin].forEach((w) => {
+              if (
+                w.chinese !== word.chinese &&
+                !similarWords.some((sw) => sw.chinese === w.chinese)
+              ) {
+                similarWords.push(w);
+              }
+            });
+          }
+
+          // Check for partial pinyin matches (first 2-3 characters)
+          Object.keys(pinyinMap).forEach((pinyin) => {
+            if (
+              pinyin !== basePinyin &&
+              (pinyin.startsWith(basePinyin.substring(0, 2)) ||
+                basePinyin.startsWith(pinyin.substring(0, 2)))
+            ) {
+              pinyinMap[pinyin].forEach((w) => {
+                if (
+                  w.chinese !== word.chinese &&
+                  !similarWords.some((sw) => sw.chinese === w.chinese)
+                ) {
+                  similarWords.push(w);
+                }
+              });
+            }
+          });
+
+          // If we don't have enough similar words, add some random ones
+          while (similarWords.length < 5) {
+            const randomWord =
+              originalWords[Math.floor(Math.random() * originalWords.length)];
+            if (
+              randomWord.chinese !== word.chinese &&
+              !similarWords.some((w) => w.chinese === randomWord.chinese)
+            ) {
+              similarWords.push(randomWord);
+            }
+          }
+
+          similarWordsMap[word.chinese] = similarWords;
+        });
+      }
+
+      // Show error message
+      function showError(message) {
+        loadingScreen.style.display = "none";
+        errorMessage.textContent = message;
+        errorMessage.style.display = "block";
+      }
+
+      // Hide loading screen and show main content
+      function showMainContent() {
+        loadingScreen.style.display = "none";
+        mainContainer.style.display = "block";
+      }
+
+      // Process the word list to interleave two alphabetical lists
+      function arrangeWords() {
+        // First, sort all words alphabetically by Chinese characters
+        originalWords.sort((a, b) => a.chinese.localeCompare(b.chinese));
+
+        // Split into two halves
+        const half = Math.ceil(originalWords.length / 2);
+        const firstHalf = originalWords.slice(0, half);
+        const secondHalf = originalWords.slice(half);
+
+        // Interleave the two halves
+        const interleaved = [];
+        let i = 0,
+          j = 0;
+
+        // Alternate between the two lists with some randomness
+        while (i < firstHalf.length && j < secondHalf.length) {
+          // Randomly decide which list to take from next
+          if (Math.random() < 0.5) {
+            interleaved.push(firstHalf[i++]);
+          } else {
+            interleaved.push(secondHalf[j++]);
+          }
+        }
+
+        // Add any remaining words
+        while (i < firstHalf.length) interleaved.push(firstHalf[i++]);
+        while (j < secondHalf.length) interleaved.push(secondHalf[j++]);
+
+        // Replace the original array with our interleaved version
+        originalWords = interleaved;
+      }
+
+      // Theme management
+      function initTheme() {
+        const savedTheme = localStorage.getItem("hsk-theme") || "light";
+        document.body.setAttribute("data-theme", savedTheme);
+        updateThemeIcon(savedTheme);
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.body.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        document.body.setAttribute("data-theme", newTheme);
+        localStorage.setItem("hsk-theme", newTheme);
+        updateThemeIcon(newTheme);
+      }
+
+      function updateThemeIcon(theme) {
+        themeIcon.textContent = theme === "light" ? "🌙" : "☀️";
+      }
+
+      // Setup event listeners
+      function setupEventListeners() {
+        themeToggle.addEventListener("click", toggleTheme);
+
+        // Batch size buttons
+        document.querySelectorAll(".batch-btn").forEach((btn) => {
+          btn.addEventListener("click", () =>
+            changeBatchSize(btn.dataset.size)
+          );
+        });
+
+        // Mode buttons
+        document
+          .getElementById("mode-pinyin")
+          .addEventListener("click", () => switchMode(true));
+        document
+          .getElementById("mode-english")
+          .addEventListener("click", () => switchMode(false));
+
+        // Review buttons
+        reviewWrongBtn.addEventListener("click", showReviewSection);
+        closeReviewBtn.addEventListener("click", hideReviewSection);
+        practiceReviewBtn.addEventListener("click", startReviewSession);
+
+        // Completion screen buttons
+        completionReviewBtn.addEventListener("click", showReviewSection);
+        completionNextBatchBtn.addEventListener("click", startNextBatch);
+
+        // Batch navigation
+        prevBatchBtn.addEventListener("click", goToPreviousBatch);
+        nextBatchBtn.addEventListener("click", goToNextBatch);
+
+        // Progress overview
+        progressOverviewBtn.addEventListener("click", showProgressOverview);
+        closeProgressBtn.addEventListener("click", hideProgressOverview);
+
+        // Save progress button
+        saveProgressBtn.addEventListener("click", saveProgress);
+
+        // Keyboard controls
+        document.addEventListener("keydown", handleKeydown);
+      }
+
+      // Change batch size
+      function changeBatchSize(size) {
+        document.querySelectorAll(".batch-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.size === size);
+        });
+
+        batchSize = size === "all" ? originalWords.length : parseInt(size);
+        currentBatch = 0;
+        resetCurrentBatch();
+        loadCurrentBatch();
+        generateQuestion();
+        updateUI();
+        updateBatchNavigation();
+        saveProgress();
+      }
+
+      // Switch between pinyin and english mode
+      function switchMode(pinyinMode) {
+        isPinyinMode = pinyinMode;
+        document
+          .getElementById("mode-pinyin")
+          .classList.toggle("active", pinyinMode);
+        document
+          .getElementById("mode-english")
+          .classList.toggle("active", !pinyinMode);
+        generateQuestion();
+        saveProgress();
+      }
+
+      // Generate question and options
+      function generateQuestion() {
+        if (currentIndex >= currentBatchWords.length) {
+          // Batch complete
+          showCompletionScreen();
+          return;
+        }
+
+        const currentWord = isReviewMode
+          ? reviewWords[currentIndex]
+          : currentBatchWords[currentIndex];
+        questionEl.textContent = currentWord.chinese;
+        feedbackEl.textContent = "";
+        feedbackEl.className = "feedback";
+
+        // Reset options
+        optionsEl.innerHTML = "";
+
+        // Create correct option
+        const correctOption = document.createElement("div");
+        correctOption.className = "option";
+        correctOption.dataset.correct = "true";
+        correctOption.textContent = isPinyinMode
+          ? `${currentWord.pinyin} - ${currentWord.english}`
+          : currentWord.english;
+
+        // Create incorrect options using similar words
+        const incorrectOptions = generateIncorrectOptions(currentWord);
+
+        // Combine and shuffle options
+        const allOptions = [correctOption, ...incorrectOptions];
+        shuffleArray(allOptions);
+
+        // Add options to DOM
+        allOptions.forEach((option) => {
+          option.addEventListener("click", selectOption);
+          optionsEl.appendChild(option);
+        });
+
+        selectedOption = null;
+        updateUI();
+      }
+
+      // Generate incorrect options using similar words
+      function generateIncorrectOptions(correctWord) {
+        const incorrectOptions = [];
+        const usedWords = new Set([correctWord.chinese]);
+
+        // Get similar words for this word
+        const similarWords = similarWordsMap[correctWord.chinese] || [];
+
+        // Use similar words first
+        for (const similarWord of similarWords) {
+          if (incorrectOptions.length >= 3) break;
+          if (!usedWords.has(similarWord.chinese)) {
+            usedWords.add(similarWord.chinese);
+
+            const option = document.createElement("div");
+            option.className = "option";
+            option.textContent = isPinyinMode
+              ? `${similarWord.pinyin} - ${similarWord.english}`
+              : similarWord.english;
+
+            incorrectOptions.push(option);
+          }
+        }
+
+        // If we need more options, add random ones
+        while (incorrectOptions.length < 3) {
+          const randomWord =
+            originalWords[Math.floor(Math.random() * originalWords.length)];
+
+          if (!usedWords.has(randomWord.chinese)) {
+            usedWords.add(randomWord.chinese);
+
+            const option = document.createElement("div");
+            option.className = "option";
+            option.textContent = isPinyinMode
+              ? `${randomWord.pinyin} - ${randomWord.english}`
+              : randomWord.english;
+
+            incorrectOptions.push(option);
+          }
+        }
+
+        return incorrectOptions;
+      }
+
+      // Select an option
+      function selectOption() {
+        if (selectedOption) return;
+
+        const options = document.querySelectorAll(".option");
+        options.forEach((opt) => opt.classList.remove("selected"));
+
+        this.classList.add("selected");
+        selectedOption = this;
+
+        setTimeout(() => {
+          checkAnswer();
+        }, 300);
+      }
+
+      // Check answer
+      function checkAnswer() {
+        if (!selectedOption) return;
+
+        const options = document.querySelectorAll(".option");
+        options.forEach((opt) => {
+          opt.removeEventListener("click", selectOption);
+          opt.style.pointerEvents = "none";
+          if (opt.dataset.correct === "true") {
+            opt.classList.add("correct");
+          }
+          if (opt === selectedOption && opt.dataset.correct !== "true") {
+            opt.classList.add("incorrect");
+          }
+        });
+
+        const currentWord = isReviewMode
+          ? reviewWords[currentIndex]
+          : currentBatchWords[currentIndex];
+        totalAnswered++;
+
+        if (selectedOption.dataset.correct === "true") {
+          feedbackEl.innerHTML = "🎉 Correct! Well done!";
+          feedbackEl.className = "feedback correct";
+          correctAnswers++;
+
+          // Remove from review words if it was there
+          if (isReviewMode) {
+            const index = reviewWords.findIndex(
+              (w) => w.chinese === currentWord.chinese
+            );
+            if (index > -1) {
+              reviewWords.splice(index, 1);
+            }
+          }
+        } else {
+          const correctText = isPinyinMode
+            ? `${currentWord.pinyin} - ${currentWord.english}`
+            : currentWord.english;
+
+          feedbackEl.innerHTML = `❌ Incorrect.<br><strong>${correctText}</strong>`;
+          feedbackEl.className = "feedback incorrect";
+
+          wrongAnswers.push({
+            word: currentWord,
+            selectedAnswer: selectedOption.textContent,
+            correctAnswer: correctText,
+          });
+
+          // Add to review words if not already there
+          if (!reviewWords.some((w) => w.chinese === currentWord.chinese)) {
+            reviewWords.push(currentWord);
+          }
+
+          // Show review button if there are wrong answers
+          if (reviewWords.length > 0 && !isReviewMode) {
+            reviewWrongBtn.style.display = "block";
+          }
+        }
+
+        updateUI();
+        saveProgress();
+
+        setTimeout(() => {
+          nextQuestion();
+        }, 2000);
+      }
+
+      // Next question
+      function nextQuestion() {
+        currentIndex++;
+        generateQuestion();
+      }
+
+      // Update UI elements
+      function updateUI() {
+        currentQuestionEl.textContent = currentIndex + 1;
+        correctCountEl.textContent = correctAnswers;
+        wrongCountEl.textContent = wrongAnswers.length;
+
+        const accuracy =
+          totalAnswered > 0
+            ? Math.round((correctAnswers / totalAnswered) * 100)
+            : 0;
+        accuracyEl.textContent = `${accuracy}%`;
+
+        const totalWords = isReviewMode
+          ? reviewWords.length
+          : currentBatchWords.length;
+        const progress = Math.min((currentIndex / totalWords) * 100, 100);
+        progressBar.style.width = `${progress}%`;
+      }
+
+      // Load current batch words
+      function loadCurrentBatch() {
+        const startIdx = currentBatch * batchSize;
+        const endIdx = Math.min(startIdx + batchSize, originalWords.length);
+        currentBatchWords = originalWords.slice(startIdx, endIdx);
+        shuffleArray(currentBatchWords);
+      }
+
+      // Reset current batch
+      function resetCurrentBatch() {
+        currentIndex = 0;
+        correctAnswers = 0;
+        wrongAnswers = [];
+        totalAnswered = 0;
+        isReviewMode = false;
+        reviewWrongBtn.style.display = "none";
+      }
+
+      // Show review section
+      function showReviewSection() {
+        if (reviewWords.length === 0) {
+          alert("No words to review yet! Answer some questions first.");
+          return;
+        }
+
+        // Populate review list
+        reviewList.innerHTML = "";
+        reviewWords.forEach((word) => {
+          const reviewItem = document.createElement("div");
+          reviewItem.className = "review-item";
+          reviewItem.innerHTML = `
+                    <div class="review-chinese">${word.chinese}</div>
+                    <div class="review-pinyin">${word.pinyin}</div>
+                    <div class="review-english">${word.english}</div>
+                `;
+          reviewList.appendChild(reviewItem);
+        });
+
+        // Show review section
+        reviewSection.style.display = "block";
+        document.querySelector(".question-container").style.display = "none";
+      }
+
+      // Hide review section
+      function hideReviewSection() {
+        reviewSection.style.display = "none";
+        document.querySelector(".question-container").style.display = "flex";
+      }
+
+      // Start review session
+      function startReviewSession() {
+        if (reviewWords.length === 0) return;
+
+        isReviewMode = true;
+        currentIndex = 0;
+        correctAnswers = 0;
+        wrongAnswers = [];
+        totalAnswered = 0;
+
+        hideReviewSection();
+        document.querySelector(".question-container").style.display = "flex";
+        generateQuestion();
+        updateUI();
+        saveProgress();
+      }
+
+      // Show completion screen
+      function showCompletionScreen() {
+        // Mark batch as completed
+        if (!isReviewMode) {
+          completedBatches.push(currentBatch);
+
+          // Store performance data
+          const accuracy =
+            totalAnswered > 0
+              ? Math.round((correctAnswers / totalAnswered) * 100)
+              : 0;
+          batchPerformance[currentBatch] = {
+            correct: correctAnswers,
+            total: currentBatchWords.length,
+            accuracy: accuracy,
+          };
+        }
+
+        completionTotal.textContent = isReviewMode
+          ? reviewWords.length
+          : currentBatchWords.length;
+        completionCorrect.textContent = correctAnswers;
+        completionWrong.textContent = wrongAnswers.length;
+
+        const accuracy =
+          totalAnswered > 0
+            ? Math.round((correctAnswers / totalAnswered) * 100)
+            : 0;
+        completionAccuracy.textContent = `${accuracy}%`;
+
+        // Show or hide review button based on whether there are wrong answers
+        completionReviewBtn.style.display =
+          reviewWords.length > 0 ? "block" : "none";
+
+        // Change button text for review mode
+        completionNextBatchBtn.textContent = isReviewMode
+          ? "Back to Batch"
+          : "Next Batch";
+
+        completionScreen.style.display = "flex";
+        saveProgress();
+      }
+
+      // Start next batch
+      function startNextBatch() {
+        completionScreen.style.display = "none";
+
+        if (isReviewMode) {
+          // Return to regular batch mode
+          isReviewMode = false;
+          resetCurrentBatch();
+          loadCurrentBatch();
+        } else {
+          // Go to next batch
+          currentBatch++;
+          resetCurrentBatch();
+          loadCurrentBatch();
+        }
+
+        generateQuestion();
+        updateUI();
+        updateBatchNavigation();
+        saveProgress();
+      }
+
+      // Go to previous batch
+      function goToPreviousBatch() {
+        if (currentBatch > 0) {
+          currentBatch--;
+          resetCurrentBatch();
+          loadCurrentBatch();
+          generateQuestion();
+          updateUI();
+          updateBatchNavigation();
+          saveProgress();
+        }
+      }
+
+      // Go to next batch
+      function goToNextBatch() {
+        const totalBatches = Math.ceil(originalWords.length / batchSize);
+        if (currentBatch < totalBatches - 1) {
+          currentBatch++;
+          resetCurrentBatch();
+          loadCurrentBatch();
+          generateQuestion();
+          updateUI();
+          updateBatchNavigation();
+          saveProgress();
+        }
+      }
+
+      // Update batch navigation UI
+      function updateBatchNavigation() {
+        const totalBatches = Math.ceil(originalWords.length / batchSize);
+        batchInfo.textContent = `Batch ${
+          currentBatch + 1
+        } of ${totalBatches} (${totalWordsCount} total words)`;
+
+        // Enable/disable buttons
+        prevBatchBtn.disabled = currentBatch === 0;
+        nextBatchBtn.disabled = currentBatch === totalBatches - 1;
+
+        // Update progress overview if visible
+        if (progressOverview.style.display === "block") {
+          updateProgressOverview();
+        }
+      }
+
+      // Show progress overview
+      function showProgressOverview() {
+        updateProgressOverview();
+        progressOverview.style.display = "block";
+      }
+
+      // Hide progress overview
+      function hideProgressOverview() {
+        progressOverview.style.display = "none";
+      }
+
+      // Update progress overview
+      function updateProgressOverview() {
+        const totalBatches = Math.ceil(originalWords.length / batchSize);
+        batchProgress.innerHTML = "";
+
+        for (let i = 0; i < totalBatches; i++) {
+          const batchItem = document.createElement("div");
+          batchItem.className = "batch-progress-item";
+
+          if (i === currentBatch) {
+            batchItem.classList.add("current");
+          } else if (completedBatches.includes(i)) {
+            batchItem.classList.add("completed");
+          }
+
+          // Add review status if there are words to review
+          if (
+            reviewWords.length > 0 &&
+            !batchItem.classList.contains("current")
+          ) {
+            batchItem.classList.add("review");
+          }
+
+          batchItem.textContent = `Batch ${i + 1}`;
+
+          // Add performance data if available
+          if (batchPerformance[i]) {
+            batchItem.title = `Accuracy: ${batchPerformance[i].accuracy}% (${batchPerformance[i].correct}/${batchPerformance[i].total})`;
+          }
+
+          batchItem.addEventListener("click", () => {
+            if (i !== currentBatch) {
+              currentBatch = i;
+              resetCurrentBatch();
+              loadCurrentBatch();
+              generateQuestion();
+              updateUI();
+              updateBatchNavigation();
+              hideProgressOverview();
+              saveProgress();
+            }
+          });
+
+          batchProgress.appendChild(batchItem);
+        }
+      }
+
+      // Save progress to localStorage
+      function saveProgress() {
+        const progressData = {
+          currentBatch,
+          batchSize,
+          currentIndex,
+          correctAnswers,
+          totalAnswered,
+          wrongAnswers,
+          isPinyinMode,
+          isReviewMode,
+          reviewWords,
+          completedBatches,
+          batchPerformance,
+          totalWordsCount,
+        };
+
+        localStorage.setItem("hskQuizProgress", JSON.stringify(progressData));
+
+        // Show a temporary confirmation
+        const originalText = saveProgressBtn.textContent;
+        saveProgressBtn.textContent = "✓ Saved";
+        setTimeout(() => {
+          saveProgressBtn.textContent = originalText;
+        }, 1500);
+      }
+
+      // Load progress from localStorage
+      function loadProgress() {
+        const savedProgress = localStorage.getItem("hskQuizProgress");
+        if (savedProgress) {
+          try {
+            const progress = JSON.parse(savedProgress);
+
+            currentBatch = progress.currentBatch || 0;
+            batchSize = progress.batchSize || 50;
+            currentIndex = progress.currentIndex || 0;
+            correctAnswers = progress.correctAnswers || 0;
+            totalAnswered = progress.totalAnswered || 0;
+            wrongAnswers = progress.wrongAnswers || [];
+            isPinyinMode =
+              progress.isPinyinMode !== undefined
+                ? progress.isPinyinMode
+                : true;
+            isReviewMode = progress.isReviewMode || false;
+            reviewWords = progress.reviewWords || [];
+            completedBatches = progress.completedBatches || [];
+            batchPerformance = progress.batchPerformance || {};
+            totalWordsCount = progress.totalWordsCount || originalWords.length;
+
+            // Update UI based on loaded progress
+            document
+              .getElementById("mode-pinyin")
+              .classList.toggle("active", isPinyinMode);
+            document
+              .getElementById("mode-english")
+              .classList.toggle("active", !isPinyinMode);
+
+            if (reviewWords.length > 0) {
+              reviewWrongBtn.style.display = "block";
+            }
+
+            loadCurrentBatch();
+            updateUI();
+            updateBatchNavigation();
+          } catch (e) {
+            console.error("Error loading saved progress:", e);
+          }
+        }
+      }
+
+      // Keyboard controls
+      function handleKeydown(e) {
+        if (e.key >= "1" && e.key <= "4") {
+          const optionIndex = parseInt(e.key) - 1;
+          const options = document.querySelectorAll(".option");
+          if (options[optionIndex] && !selectedOption) {
+            selectOption.call(options[optionIndex]);
+          }
+        }
+      }
+
+      // Shuffle array
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Initialize the app
+      async function init() {
+        initTheme();
+        setupEventListeners();
+
+        // Load vocabulary
+        const success = await loadVocabulary();
+
+        if (success) {
+          loadCurrentBatch();
+          loadProgress(); // Load saved progress after vocabulary is loaded
+          generateQuestion();
+          updateUI();
+          updateBatchNavigation();
+          showMainContent();
+        }
+      }
+
+      // Start the app
+      init();
+    </script>
+  </body>
+</html>
