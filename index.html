@@ -4,146 +4,174 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HSK 3 Vocabulary Quiz</title>
+    <!-- Nếu bạn muốn font đẹp hơn, thêm vào <head> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       :root {
-        --bg-primary: #ffffff;
-        --bg-secondary: #f8f9fa;
+        --font-body: "Roboto", sans-serif;
+        --font-chinese: "Noto Sans SC", sans-serif;
+
+        --bg-primary: #f5f7fa;
+        --bg-secondary: #ffffff;
         --bg-card: #ffffff;
+
         --text-primary: #2c3e50;
-        --text-secondary: #666;
-        --accent: #3498db;
-        --success: #2ecc71;
-        --error: #e74c3c;
+        --text-secondary: #7f8c8d;
+
+        --accent: #2980b9;
+        --accent-hover: #1f6391;
+
+        --success: #27ae60;
+        --error: #c0392b;
         --warning: #f39c12;
-        --border: #e9ecef;
-        --shadow: rgba(0, 0, 0, 0.1);
+
+        --border: #dcdde1;
+        --shadow-light: rgba(0, 0, 0, 0.1);
+        --shadow-hover: rgba(0, 0, 0, 0.2);
+        --transition-fast: 0.2s ease;
+        --transition-slow: 0.3s ease;
       }
 
       [data-theme="dark"] {
-        --bg-primary: #1a1a1a;
-        --bg-secondary: #2d2d2d;
-        --bg-card: #333333;
-        --text-primary: #ffffff;
-        --text-secondary: #cccccc;
-        --accent: #4a9eff;
-        --success: #00d084;
-        --error: #ff6b6b;
-        --warning: #ffa726;
-        --border: #444444;
-        --shadow: rgba(0, 0, 0, 0.3);
+        --bg-primary: #1c1e22;
+        --bg-secondary: #2c2f33;
+        --bg-card: #32353f;
+
+        --text-primary: #ecf0f1;
+        --text-secondary: #bdc3c7;
+
+        --accent: #4a90e2;
+        --accent-hover: #357ab7;
+
+        --success: #2ecc71;
+        --error: #e74c3c;
+        --warning: #f1c40f;
+
+        --border: #444b52;
+        --shadow-light: rgba(0, 0, 0, 0.3);
+        --shadow-hover: rgba(0, 0, 0, 0.5);
       }
 
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, sans-serif;
       }
 
       body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
         background: var(--bg-primary);
         color: var(--text-primary);
-        min-height: 100vh;
-        transition: all 0.3s ease;
-        padding: 0;
+        font-family: var(--font-body);
+        transition: background var(--transition-slow),
+          color var(--transition-slow);
         overflow-x: hidden;
+      }
+
+      a,
+      button {
+        font-family: var(--font-body);
       }
 
       .container {
         width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
         min-height: 100vh;
-        background: var(--bg-primary);
         display: flex;
         flex-direction: column;
+        padding: 24px 16px;
       }
 
-      /* Loading screen */
+      /* Loading Screen */
       .loading-screen {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--bg-primary);
+        background: var(--bg-secondary);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
         z-index: 9999;
       }
-
       .loading-spinner {
-        width: 50px;
-        height: 50px;
-        border: 4px solid var(--border);
-        border-top: 4px solid var(--accent);
+        width: 60px;
+        height: 60px;
+        border: 5px solid var(--border);
+        border-top: 5px solid var(--accent);
         border-radius: 50%;
         animation: spin 1s linear infinite;
         margin-bottom: 20px;
       }
-
       .loading-text {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 600;
         color: var(--text-primary);
       }
 
       .error-message {
         background: var(--error);
-        color: white;
+        color: #fff;
         padding: 16px;
         border-radius: 8px;
-        margin: 16px;
+        margin: 20px;
         text-align: center;
         display: none;
+        font-weight: 500;
       }
 
       /* Header */
       .header {
         background: var(--accent);
-        color: white;
-        padding: 12px 16px;
+        color: #fff;
+        padding: 20px 24px;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 2px 8px var(--shadow);
+        box-shadow: 0 4px 12px var(--shadow-light);
+        border-radius: 0 0 16px 16px;
+        transition: background var(--transition-fast);
       }
-
       .header-top {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        margin-bottom: 8px;
+        justify-content: space-between;
       }
-
       .title {
-        font-size: 1.4rem;
+        font-size: 2rem;
         font-weight: 700;
+        margin: 0;
       }
-
+      .subtitle {
+        margin-top: 8px;
+        font-size: 1rem;
+        opacity: 0.9;
+      }
       .theme-toggle {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.25);
         border: none;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         color: white;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
+        font-size: 1.4rem;
+        transition: background var(--transition-fast);
       }
-
       .theme-toggle:hover {
-        background: rgba(255, 255, 255, 0.3);
-      }
-
-      .subtitle {
-        font-size: 0.85rem;
-        opacity: 0.9;
+        background: rgba(255, 255, 255, 0.35);
       }
 
       /* Quick Stats */
@@ -151,47 +179,46 @@
         display: flex;
         justify-content: space-around;
         background: var(--bg-secondary);
-        padding: 12px 8px;
+        padding: 16px 12px;
         border-bottom: 1px solid var(--border);
+        border-radius: 0 0 12px 12px;
       }
-
       .stat-item {
-        text-align: center;
         flex: 1;
+        text-align: center;
       }
-
       .stat-number {
-        font-size: 1.3rem;
-        font-weight: bold;
+        font-size: 1.5rem;
+        font-weight: 700;
         color: var(--accent);
       }
-
       .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         color: var(--text-secondary);
-        margin-top: 2px;
+        margin-top: 4px;
       }
 
-      /* Progress Bar */
+      /* Progress bar */
       .progress-container {
         background: var(--bg-secondary);
         height: 8px;
         position: relative;
         overflow: hidden;
+        border-radius: 4px;
+        margin-top: 8px;
+        margin-bottom: 16px;
       }
-
       .progress-bar {
         height: 100%;
+        background: var(--success);
         background: linear-gradient(90deg, var(--success), var(--accent));
         width: 0%;
-        transition: width 0.3s ease;
-        position: relative;
+        transition: width var(--transition-slow);
       }
 
       /* Main Content */
       .main-content {
         flex: 1;
-        padding: 16px;
         display: flex;
         flex-direction: column;
       }
@@ -199,103 +226,103 @@
       /* Controls */
       .top-controls {
         display: flex;
-        gap: 8px;
-        margin-bottom: 16px;
         flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
       }
-
       .control-group {
         display: flex;
-        gap: 4px;
-        background: var(--bg-card);
-        border-radius: 8px;
-        padding: 4px;
-        border: 1px solid var(--border);
+        gap: 8px;
       }
-
       .mode-btn,
       .batch-btn,
-      .action-btn {
-        padding: 8px 12px;
-        border: none;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        font-weight: 600;
+      .action-btn,
+      .secondary-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
         cursor: pointer;
-        transition: all 0.2s ease;
-        background: transparent;
-        color: var(--text-secondary);
-        white-space: nowrap;
+        transition: background var(--transition-fast),
+          color var(--transition-fast), transform var(--transition-fast),
+          box-shadow var(--transition-fast);
+        border: 1px solid transparent;
       }
-
+      .mode-btn,
+      .batch-btn {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        border-color: var(--border);
+      }
       .mode-btn.active,
       .batch-btn.active {
         background: var(--accent);
-        color: white;
-        box-shadow: 0 2px 4px var(--shadow);
+        color: #fff;
+        border-color: var(--accent);
+        box-shadow: 0 4px 8px var(--shadow-light);
       }
-
       .action-btn {
         background: var(--accent);
-        color: white;
+        color: #fff;
+        border-color: var(--accent);
+        box-shadow: 0 4px 8px var(--shadow-light);
       }
-
+      .action-btn:hover {
+        background: var(--accent-hover);
+        border-color: var(--accent-hover);
+        box-shadow: 0 6px 12px var(--shadow-hover);
+      }
       .secondary-btn {
         background: var(--bg-secondary);
         color: var(--text-primary);
         border: 1px solid var(--border);
       }
+      .secondary-btn:hover {
+        background: var(--border);
+      }
 
-      /* Question Area */
+      /* Question area */
       .question-container {
         flex: 1;
+        background: var(--bg-secondary);
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 12px var(--shadow-light);
+        border: 1px solid var(--border);
+        margin-bottom: 24px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 300px;
-        background: var(--bg-card);
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 4px 12px var(--shadow);
-        margin-bottom: 16px;
-        border: 1px solid var(--border);
+        transition: background var(--transition-fast),
+          border var(--transition-fast);
       }
-
       .question {
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-align: center;
+        font-family: var(--font-chinese);
+        font-size: 3rem;
+        font-weight: 700;
         color: var(--text-primary);
-        margin-bottom: 24px;
-        min-height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 32px;
+        text-align: center;
         line-height: 1.2;
       }
 
       .feedback {
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 600;
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 16px;
-        border-radius: 8px;
-        padding: 8px 12px;
-        transition: all 0.3s ease;
+        min-height: 60px;
+        margin-bottom: 24px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        transition: background var(--transition-fast),
+          color var(--transition-fast), border var(--transition-fast);
       }
-
       .feedback.correct {
-        background: rgba(46, 204, 113, 0.1);
+        background: rgba(39, 174, 96, 0.15); /* success with transparency */
         color: var(--success);
         border: 1px solid var(--success);
       }
-
       .feedback.incorrect {
-        background: rgba(231, 76, 60, 0.1);
+        background: rgba(192, 57, 43, 0.15);
         color: var(--error);
         border: 1px solid var(--error);
       }
@@ -303,114 +330,169 @@
       /* Options */
       .options {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
       }
-
       .option {
-        padding: 16px;
-        background: var(--bg-secondary);
+        padding: 18px 20px;
+        background: var(--bg-card);
         border: 2px solid var(--border);
         border-radius: 12px;
-        cursor: pointer;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 500;
-        transition: all 0.2s ease;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
         color: var(--text-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: background var(--transition-fast),
+          transform var(--transition-fast), box-shadow var(--transition-fast),
+          border-color var(--transition-fast);
       }
-
       .option:hover {
+        background: var(--bg-secondary);
+        box-shadow: 0 4px 12px var(--shadow-hover);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px var(--shadow);
       }
-
-      .option:active {
-        transform: scale(0.98);
-      }
-
       .option.selected {
         background: var(--accent);
-        color: white;
+        color: #fff;
         border-color: var(--accent);
-        transform: scale(1.02);
       }
-
       .option.correct {
         background: var(--success);
-        color: white;
+        color: #fff;
         border-color: var(--success);
         animation: pulse 0.6s ease;
       }
-
       .option.incorrect {
         background: var(--error);
-        color: white;
+        color: #fff;
         border-color: var(--error);
         animation: shake 0.5s ease;
       }
 
-      /* Review Section */
-      .review-section {
-        margin-top: 20px;
-        padding: 16px;
-        background: var(--bg-card);
-        border-radius: 12px;
-        box-shadow: 0 4px 12px var(--shadow);
-        border: 1px solid var(--border);
-        display: none;
-      }
-
-      .review-header {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 16px;
-        color: var(--text-primary);
+      /* Review / Completion / Progress overview / Batch navigation / etc. */
+      .batch-navigation {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .batch-info {
+        font-size: 1rem;
+        color: var(--text-secondary);
+      }
+      .batch-buttons button {
+        margin-left: 8px;
       }
 
+      .review-section,
+      .progress-overview,
+      .completion-screen {
+        /* giữ nguyên cấu trúc nhưng style đẹp hơn */
+      }
+
+      .review-section {
+        margin-top: 20px;
+        padding: 24px;
+        background: var(--bg-secondary);
+        border-radius: 16px;
+        box-shadow: 0 4px 12px var(--shadow-light);
+        border: 1px solid var(--border);
+        display: none;
+      }
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+      }
       .review-list {
         display: grid;
-        grid-template-columns: 1fr;
         gap: 12px;
+        grid-template-columns: 1fr;
       }
-
       .review-item {
-        padding: 12px;
-        background: var(--bg-secondary);
-        border-radius: 8px;
+        padding: 16px;
+        background: var(--bg-card);
         border: 1px solid var(--border);
+        border-radius: 12px;
       }
-
       .review-chinese {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 4px;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 6px;
       }
-
       .review-pinyin {
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: var(--text-secondary);
         margin-bottom: 4px;
       }
-
       .review-english {
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: var(--text-primary);
       }
-
       .review-actions {
         display: flex;
         justify-content: flex-end;
         margin-top: 16px;
-        gap: 8px;
       }
 
-      /* Completion Screen */
+      .progress-overview {
+        margin-top: 24px;
+        padding: 24px;
+        background: var(--bg-secondary);
+        border-radius: 16px;
+        box-shadow: 0 4px 12px var(--shadow-light);
+        border: 1px solid var(--border);
+        display: none;
+      }
+      .progress-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+      }
+      .batch-progress {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+      .batch-progress-item {
+        padding: 12px;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: background var(--transition-fast),
+          color var(--transition-fast), transform var(--transition-fast);
+        border: 1px solid var(--border);
+        color: var(--text-primary);
+      }
+      .batch-progress-item.current {
+        background: var(--accent);
+        color: #fff;
+      }
+      .batch-progress-item.completed {
+        background: var(--success);
+        color: #fff;
+      }
+      .batch-progress-item.review {
+        background: var(--warning);
+        color: #fff;
+      }
+      .batch-progress-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--shadow-hover);
+      }
+
       .completion-screen {
         position: fixed;
         top: 0;
@@ -419,110 +501,50 @@
         bottom: 0;
         background: rgba(0, 0, 0, 0.7);
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         z-index: 1000;
         display: none;
+        padding: 16px;
       }
-
       .completion-content {
-        background: var(--bg-card);
-        padding: 24px;
-        border-radius: 12px;
+        background: var(--bg-secondary);
+        padding: 32px;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px var(--shadow-light);
         text-align: center;
-        max-width: 90%;
-        width: 400px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       }
-
       .completion-title {
-        font-size: 1.8rem;
-        margin-bottom: 16px;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 24px;
         color: var(--text-primary);
       }
-
       .completion-stats {
         margin-bottom: 24px;
+        text-align: left;
       }
-
       .completion-stat {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 8px;
-        padding: 4px 0;
+        margin-bottom: 12px;
+        padding-bottom: 4px;
         border-bottom: 1px solid var(--border);
-      }
-
-      /* Batch Navigation */
-      .batch-navigation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 16px;
-        padding: 12px;
-        background: var(--bg-secondary);
-        border-radius: 8px;
-        border: 1px solid var(--border);
-      }
-
-      .batch-info {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-      }
-
-      .batch-buttons {
-        display: flex;
-        gap: 8px;
-      }
-
-      /* Progress Overview */
-      .progress-overview {
-        margin-top: 16px;
-        padding: 16px;
-        background: var(--bg-card);
-        border-radius: 12px;
-        box-shadow: 0 4px 12px var(--shadow);
-        border: 1px solid var(--border);
-        display: none;
-      }
-
-      .progress-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 16px;
+        font-size: 1rem;
         color: var(--text-primary);
       }
 
-      .batch-progress {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 8px;
+      .completion-stat span {
+        font-weight: 500;
       }
 
-      .batch-progress-item {
-        padding: 8px;
-        background: var(--bg-secondary);
-        border-radius: 6px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
+      .review-actions button {
+        margin-left: 8px;
       }
 
-      .batch-progress-item.current {
-        background: var(--accent);
-        color: white;
-      }
-
-      .batch-progress-item.completed {
-        background: var(--success);
-        color: white;
-      }
-
-      .batch-progress-item.review {
-        background: var(--warning);
-        color: white;
-      }
-
+      /* Animations & Keyframes */
       @keyframes pulse {
         0%,
         100% {
@@ -532,7 +554,6 @@
           transform: scale(1.05);
         }
       }
-
       @keyframes shake {
         0%,
         100% {
@@ -545,87 +566,70 @@
           transform: translateX(8px);
         }
       }
-
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
       }
 
-      /* Responsive design */
+      /* Responsive */
       @media (max-width: 768px) {
-        .subtitle {
-          display: none;
+        .title {
+          font-size: 1.8rem;
         }
-
         .question {
-          font-size: 2rem;
-          margin-bottom: 20px;
+          font-size: 2.4rem;
+          margin-bottom: 24px;
         }
-
         .option {
-          font-size: 1rem;
-          padding: 14px;
+          font-size: 1.1rem;
+          padding: 16px;
         }
-
-        .review-list {
-          grid-template-columns: 1fr;
-        }
-
-        .top-controls {
+        .quick-stats {
           flex-direction: column;
+          gap: 12px;
         }
-
         .batch-navigation {
           flex-direction: column;
           gap: 12px;
         }
-
-        .batch-buttons {
-          width: 100%;
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .header {
-          padding: 8px 12px;
-        }
-
-        .title {
-          font-size: 1.2rem;
-        }
-
-        .main-content {
-          padding: 12px;
-        }
-
-        .question-container {
-          padding: 16px;
-          min-height: 250px;
-        }
-
-        .question {
-          font-size: 1.8rem;
-          min-height: 50px;
-        }
-
-        .options {
-          gap: 8px;
-        }
-
-        .option {
-          padding: 12px;
-          font-size: 0.95rem;
-        }
-
-        .review-chinese {
-          font-size: 1.3rem;
-        }
-
         .batch-progress {
           grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         }
+      }
+      @media (max-width: 480px) {
+        .question {
+          font-size: 2rem;
+        }
+        .option {
+          font-size: 1rem;
+          padding: 14px;
+        }
+        .completion-content {
+          padding: 24px 16px;
+        }
+      }
+      .footer {
+        background: var(--bg-secondary);
+        padding: 32px 24px;
+        text-align: center;
+        border-top: 1px solid var(--border);
+        border-radius: 24px 24px 0 0;
+        box-shadow: 0 -2px 12px var(--shadow-light);
+        margin-top: 40px;
+      }
+      .footer h3 {
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+      .footer p {
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+        font-size: 1rem;
+      }
+      .footer .action-btn {
+        font-size: 1rem;
       }
     </style>
   </head>
@@ -638,7 +642,7 @@
 
     <!-- Error Message -->
     <div class="error-message" id="error-message">
-      Failed to load vocabulary. Please check that the hsk3.json file is in the
+      Failed to load vocabulary. Please check that the hsk1.json file is in the
       correct location.
     </div>
 
@@ -660,19 +664,19 @@
       <div class="quick-stats">
         <div class="stat-item">
           <div class="stat-number" id="current-question">1</div>
-          <div class="stat-label">Current</div>
+          <div class="stat-label">Hiện tại</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" id="correct-count">0</div>
-          <div class="stat-label">Correct</div>
+          <div class="stat-label">Đúng</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" id="wrong-count">0</div>
-          <div class="stat-label">Wrong</div>
+          <div class="stat-label">Sai</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" id="accuracy">0%</div>
-          <div class="stat-label">Accuracy</div>
+          <div class="stat-label">Tỉ lệ</div>
         </div>
       </div>
 
@@ -701,51 +705,53 @@
               id="review-wrong-btn"
               style="display: none"
             >
-              📝 Review Wrong(xem lỗi sai nhá Thư)
+              📝 Từ vựng sai nè
             </button>
             <button class="action-btn secondary-btn" id="progress-overview-btn">
-              📊 Progress(Tiến trình học của Thư)
+              📊 Tiến trình học ấy
             </button>
             <button class="action-btn secondary-btn" id="save-progress-btn">
-              💾 Save(Lưu lại)
+              💾 Lưu lại
             </button>
           </div>
         </div>
 
         <!-- Question Container -->
         <div class="question-container fade-in">
-          <div class="question" id="question">Loading...</div>
+          <div class="question" id="question">Chờ xíu đang tải, từ từ thôi</div>
           <div class="feedback" id="feedback"></div>
           <div class="options" id="options"></div>
         </div>
 
         <!-- Batch Navigation -->
         <div class="batch-navigation">
-          <div class="batch-info" id="batch-info">Batch 1 of 1</div>
+          <div class="batch-info" id="batch-info">Danh sách 1 of 1</div>
           <div class="batch-buttons">
             <button
               class="action-btn secondary-btn"
               id="prev-batch-btn"
               disabled
             >
-              Previous Batch
+              Ơ quay lại cái
             </button>
-            <button class="action-btn" id="next-batch-btn">Next Batch</button>
+            <button class="action-btn" id="next-batch-btn">
+              Từ tiếp theo nee
+            </button>
           </div>
         </div>
 
         <!-- Review Section -->
         <div class="review-section" id="review-section">
           <div class="review-header">
-            <span>Words to Review</span>
+            <span>Sao Cậu làm sai nhiều thế, khó chịu vô cùng</span>
             <button class="action-btn secondary-btn" id="close-review-btn">
-              Close
+              Đóng
             </button>
           </div>
           <div class="review-list" id="review-list"></div>
           <div class="review-actions">
             <button class="action-btn secondary-btn" id="practice-review-btn">
-              Practice These Words
+              Cùng tớ làm lại nha Cậu
             </button>
           </div>
         </div>
@@ -761,6 +767,17 @@
           </div>
         </div>
       </main>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <h3>Cảm ơn Cậu đã học</h3>
+          <p>Món quà tặng Cậu. Một newbie hahahahahahahahahah</p>
+          <p>by Tiến Thương</p>
+          <button class="action-btn" onclick="location.reload()">
+            🔁 Làm lại
+          </button>
+        </div>
+      </footer>
     </div>
 
     <!-- Completion Screen -->
@@ -859,7 +876,7 @@
       // Load vocabulary from JSON file
       async function loadVocabulary() {
         try {
-          const response = await fetch("./hsk3.json");
+          const response = await fetch("./hsk1.json");
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }

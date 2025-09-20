@@ -1,0 +1,2507 @@
+{
+  "level": "1",
+  "description": "By Tien Thuong",
+  "totalWords": 500,
+  "words": [
+    {
+      "chinese": "爱",
+      "pinyin": "ài",
+      "english": "yêu, tình yêu"
+    },
+    {
+      "chinese": "爱好",
+      "pinyin": "ài hào",
+      "english": "sở thích"
+    },
+    {
+      "chinese": "八",
+      "pinyin": "bā",
+      "english": "tám"
+    },
+    {
+      "chinese": "爸爸",
+      "pinyin": "bàba",
+      "english": "bố"
+    },
+    {
+      "chinese": "吧",
+      "pinyin": "ba",
+      "english": "trợ từ cảm thán"
+    },
+    {
+      "chinese": "白",
+      "pinyin": "bái",
+      "english": "trắng"
+    },
+    {
+      "chinese": "白天",
+      "pinyin": "bái tiān",
+      "english": "ban ngày"
+    },
+    {
+      "chinese": "百",
+      "pinyin": "bǎi",
+      "english": "trăm"
+    },
+    {
+      "chinese": "班",
+      "pinyin": "bān",
+      "english": "lớp"
+    },
+    {
+      "chinese": "半",
+      "pinyin": "bàn",
+      "english": "một nửa"
+    },
+    {
+      "chinese": "半年",
+      "pinyin": "bàn nián",
+      "english": "nửa năm"
+    },
+    {
+      "chinese": "半天",
+      "pinyin": "bàn tiān",
+      "english": "nửa ngày"
+    },
+    {
+      "chinese": "帮",
+      "pinyin": "bāng",
+      "english": "giúp"
+    },
+    {
+      "chinese": "帮忙",
+      "pinyin": "bāng máng",
+      "english": "giúp đỡ"
+    },
+    {
+      "chinese": "包",
+      "pinyin": "bāo",
+      "english": "gói, bao"
+    },
+    {
+      "chinese": "包子",
+      "pinyin": "bāo zi",
+      "english": "bánh bao"
+    },
+    {
+      "chinese": "杯",
+      "pinyin": "bēi",
+      "english": "cốc"
+    },
+    {
+      "chinese": "杯子",
+      "pinyin": "bēi zi",
+      "english": "cái cốc"
+    },
+    {
+      "chinese": "北",
+      "pinyin": "běi",
+      "english": "bắc"
+    },
+    {
+      "chinese": "北边",
+      "pinyin": "běi biān",
+      "english": "phía Bắc"
+    },
+    {
+      "chinese": "北京",
+      "pinyin": "běi jīng",
+      "english": "Bắc Kinh"
+    },
+    {
+      "chinese": "本",
+      "pinyin": "běn",
+      "english": "lượng từ cho sách"
+    },
+    {
+      "chinese": "本子",
+      "pinyin": "běn zi",
+      "english": "quyển sách"
+    },
+    {
+      "chinese": "比",
+      "pinyin": "bǐ",
+      "english": "so sánh"
+    },
+    {
+      "chinese": "别",
+      "pinyin": "bié",
+      "english": "đừng"
+    },
+    {
+      "chinese": "别的",
+      "pinyin": "bié de",
+      "english": "khác"
+    },
+    {
+      "chinese": "别人",
+      "pinyin": "bié rén",
+      "english": "người khác"
+    },
+    {
+      "chinese": "病",
+      "pinyin": "bìng",
+      "english": "bệnh tật"
+    },
+    {
+      "chinese": "病人",
+      "pinyin": "bìng rén",
+      "english": "bệnh nhân"
+    },
+    {
+      "chinese": "不大",
+      "pinyin": "bú dà",
+      "english": "không lớn"
+    },
+    {
+      "chinese": "不对",
+      "pinyin": "bú duì",
+      "english": "sai"
+    },
+    {
+      "chinese": "不客气",
+      "pinyin": "bú kè qì",
+      "english": "không có gì"
+    },
+    {
+      "chinese": "不用",
+      "pinyin": "bú yòng",
+      "english": "không cần"
+    },
+    {
+      "chinese": "不",
+      "pinyin": "bù",
+      "english": "không"
+    },
+    {
+      "chinese": "菜",
+      "pinyin": "cài",
+      "english": "món ăn, rau"
+    },
+    {
+      "chinese": "茶",
+      "pinyin": "chá",
+      "english": "trà"
+    },
+    {
+      "chinese": "差",
+      "pinyin": "chà",
+      "english": "chênh lệch, kém"
+    },
+    {
+      "chinese": "常",
+      "pinyin": "cháng",
+      "english": "thường"
+    },
+    {
+      "chinese": "常常",
+      "pinyin": "cháng cháng",
+      "english": "thường xuyên"
+    },
+    {
+      "chinese": "唱",
+      "pinyin": "chàng",
+      "english": "hát"
+    },
+    {
+      "chinese": "唱歌",
+      "pinyin": "chàng gē",
+      "english": "hát (bài hát)"
+    },
+    {
+      "chinese": "车",
+      "pinyin": "chē",
+      "english": "xe"
+    },
+    {
+      "chinese": "车票",
+      "pinyin": "chē piào",
+      "english": "vé xe"
+    },
+    {
+      "chinese": "车上",
+      "pinyin": "chē shàng",
+      "english": "trên xe"
+    },
+    {
+      "chinese": "车站",
+      "pinyin": "chē zhàn",
+      "english": "nhà ga, bến xe"
+    },
+    {
+      "chinese": "吃",
+      "pinyin": "chī",
+      "english": "ăn"
+    },
+    {
+      "chinese": "吃饭",
+      "pinyin": "chī fàn",
+      "english": "ăn cơm"
+    },
+    {
+      "chinese": "出",
+      "pinyin": "chū",
+      "english": "ra"
+    },
+    {
+      "chinese": "出来",
+      "pinyin": "chū lái",
+      "english": "đi ra, ra ngoài"
+    },
+    {
+      "chinese": "出去",
+      "pinyin": "chū qù",
+      "english": "đi ra ngoài"
+    },
+    {
+      "chinese": "穿",
+      "pinyin": "chuān",
+      "english": "mặc"
+    },
+    {
+      "chinese": "床",
+      "pinyin": "chuáng",
+      "english": "giường"
+    },
+    {
+      "chinese": "次",
+      "pinyin": "cì",
+      "english": "lượng từ cho số lần"
+    },
+    {
+      "chinese": "从",
+      "pinyin": "cóng",
+      "english": "từ"
+    },
+    {
+      "chinese": "错",
+      "pinyin": "cuò",
+      "english": "sai"
+    },
+    {
+      "chinese": "打",
+      "pinyin": "dǎ",
+      "english": "đánh, lấy"
+    },
+    {
+      "chinese": "打车",
+      "pinyin": "dǎ chē",
+      "english": "bắt taxi"
+    },
+    {
+      "chinese": "打电话",
+      "pinyin": "dǎ diàn huà",
+      "english": "gọi điện thoại"
+    },
+    {
+      "chinese": "打开",
+      "pinyin": "dǎ kāi",
+      "english": "mở"
+    },
+    {
+      "chinese": "打球",
+      "pinyin": "dǎ qiú",
+      "english": "chơi bóng"
+    },
+    {
+      "chinese": "大",
+      "pinyin": "dà",
+      "english": "lớn, to"
+    },
+    {
+      "chinese": "大学",
+      "pinyin": "dà xué",
+      "english": "đại học"
+    },
+    {
+      "chinese": "大学生",
+      "pinyin": "dà xué shēng",
+      "english": "sinh viên đại học"
+    },
+    {
+      "chinese": "到",
+      "pinyin": "dào",
+      "english": "đến"
+    },
+    {
+      "chinese": "得到",
+      "pinyin": "dé dào",
+      "english": "đạt được"
+    },
+    {
+      "chinese": "地",
+      "pinyin": "de",
+      "english": "trợ từ"
+    },
+    {
+      "chinese": "的",
+      "pinyin": "de",
+      "english": "trợ từ"
+    },
+    {
+      "chinese": "等",
+      "pinyin": "děng",
+      "english": "đợi"
+    },
+    {
+      "chinese": "地",
+      "pinyin": "dì",
+      "english": "đất"
+    },
+    {
+      "chinese": "地点",
+      "pinyin": "dì diǎn",
+      "english": "địa điểm"
+    },
+    {
+      "chinese": "地方",
+      "pinyin": "dì fang",
+      "english": "địa phương"
+    },
+    {
+      "chinese": "地上",
+      "pinyin": "dì shàng",
+      "english": "trên mặt đất"
+    },
+    {
+      "chinese": "地图",
+      "pinyin": "dì tú",
+      "english": "bản đồ"
+    },
+    {
+      "chinese": "弟弟",
+      "pinyin": "dì di",
+      "english": "em trai"
+    },
+    {
+      "chinese": "第",
+      "pinyin": "dì",
+      "english": "thứ (thứ hai…)"
+    },
+    {
+      "chinese": "点",
+      "pinyin": "diǎn",
+      "english": "điểm, giờ"
+    },
+    {
+      "chinese": "电",
+      "pinyin": "diàn",
+      "english": "điện"
+    },
+    {
+      "chinese": "电话",
+      "pinyin": "diàn huà",
+      "english": "điện thoại"
+    },
+    {
+      "chinese": "电脑",
+      "pinyin": "diàn nǎo",
+      "english": "máy tính"
+    },
+    {
+      "chinese": "电视",
+      "pinyin": "diàn shì",
+      "english": "vô tuyến"
+    },
+    {
+      "chinese": "电视机",
+      "pinyin": "diàn shì jī",
+      "english": "tivi"
+    },
+    {
+      "chinese": "电影",
+      "pinyin": "diàn yǐng",
+      "english": "phim"
+    },
+    {
+      "chinese": "电影院",
+      "pinyin": "diàn yǐng yuàn",
+      "english": "rạp chiếu phim"
+    },
+    {
+      "chinese": "东",
+      "pinyin": "dōng",
+      "english": "đông"
+    },
+    {
+      "chinese": "东边",
+      "pinyin": "dōng biān",
+      "english": "phía đông"
+    },
+    {
+      "chinese": "东西",
+      "pinyin": "dōng xi",
+      "english": "đồ vật"
+    },
+    {
+      "chinese": "动",
+      "pinyin": "dòng",
+      "english": "di chuyển"
+    },
+    {
+      "chinese": "动作",
+      "pinyin": "dòng zuò",
+      "english": "hành động"
+    },
+    {
+      "chinese": "都",
+      "pinyin": "dōu",
+      "english": "tất cả"
+    },
+    {
+      "chinese": "读",
+      "pinyin": "dú",
+      "english": "đọc"
+    },
+    {
+      "chinese": "读书",
+      "pinyin": "dú shū",
+      "english": "đọc sách; học"
+    },
+    {
+      "chinese": "对",
+      "pinyin": "duì",
+      "english": "đúng"
+    },
+    {
+      "chinese": "对不起",
+      "pinyin": "duì bu qǐ",
+      "english": "xin lỗi"
+    },
+    {
+      "chinese": "多",
+      "pinyin": "duō",
+      "english": "nhiều"
+    },
+    {
+      "chinese": "多少",
+      "pinyin": "duō shao",
+      "english": "bao nhiêu"
+    },
+    {
+      "chinese": "饿",
+      "pinyin": "è",
+      "english": "đói"
+    },
+    {
+      "chinese": "儿子",
+      "pinyin": "ér zi",
+      "english": "con trai"
+    },
+    {
+      "chinese": "二",
+      "pinyin": "èr",
+      "english": "hai"
+    },
+    {
+      "chinese": "饭",
+      "pinyin": "fàn",
+      "english": "cơm; bữa ăn"
+    },
+    {
+      "chinese": "饭店",
+      "pinyin": "fàn diàn",
+      "english": "nhà hàng"
+    },
+    {
+      "chinese": "房间",
+      "pinyin": "fángjiān",
+      "english": "phòng"
+    },
+    {
+      "chinese": "房子",
+      "pinyin": "fáng zi",
+      "english": "nhà; tòa nhà"
+    },
+    {
+      "chinese": "放",
+      "pinyin": "fàng",
+      "english": "thả, đặt"
+    },
+    {
+      "chinese": "放假",
+      "pinyin": "fàng jià",
+      "english": "nghỉ lễ; có ngày nghỉ"
+    },
+    {
+      "chinese": "放学",
+      "pinyin": "fàng xué",
+      "english": "tan học"
+    },
+    {
+      "chinese": "飞",
+      "pinyin": "fēi",
+      "english": "bay"
+    },
+    {
+      "chinese": "飞机",
+      "pinyin": "fēijī",
+      "english": "máy bay"
+    },
+    {
+      "chinese": "非常",
+      "pinyin": "fēicháng",
+      "english": "rất, vô cùng"
+    },
+    {
+      "chinese": "分",
+      "pinyin": "fēn",
+      "english": "phút; điểm; phần"
+    },
+    {
+      "chinese": "风",
+      "pinyin": "fēng",
+      "english": "gió"
+    },
+    {
+      "chinese": "干",
+      "pinyin": "gān",
+      "english": "khô"
+    },
+    {
+      "chinese": "干净",
+      "pinyin": "gānjìng",
+      "english": "sạch sẽ"
+    },
+    {
+      "chinese": "干",
+      "pinyin": "gàn",
+      "english": "làm"
+    },
+    {
+      "chinese": "干什么",
+      "pinyin": "gàn shénme",
+      "english": "làm gì"
+    },
+    {
+      "chinese": "高",
+      "pinyin": "gāo",
+      "english": "cao"
+    },
+    {
+      "chinese": "高兴",
+      "pinyin": "gāoxìng",
+      "english": "vui vẻ"
+    },
+    {
+      "chinese": "告诉",
+      "pinyin": "gàosu",
+      "english": "nói, bảo"
+    },
+    {
+      "chinese": "哥哥",
+      "pinyin": "gē ge",
+      "english": "anh trai"
+    },
+    {
+      "chinese": "歌",
+      "pinyin": "gē",
+      "english": "bài hát"
+    },
+    {
+      "chinese": "个",
+      "pinyin": "gè",
+      "english": "cái, chiếc"
+    },
+    {
+      "chinese": "给",
+      "pinyin": "gěi",
+      "english": "cho"
+    },
+    {
+      "chinese": "跟",
+      "pinyin": "gēn",
+      "english": "với"
+    },
+    {
+      "chinese": "工人",
+      "pinyin": "gōngrén",
+      "english": "công nhân"
+    },
+    {
+      "chinese": "工作",
+      "pinyin": "gōngzuò",
+      "english": "công việc, làm việc"
+    },
+    {
+      "chinese": "关",
+      "pinyin": "guān",
+      "english": "đóng; tắt"
+    },
+    {
+      "chinese": "关上",
+      "pinyin": "guān shàng",
+      "english": "đóng lại; tắt"
+    },
+    {
+      "chinese": "贵",
+      "pinyin": "guì",
+      "english": "quý"
+    },
+    {
+      "chinese": "国",
+      "pinyin": "guó",
+      "english": "quốc gia"
+    },
+    {
+      "chinese": "国家",
+      "pinyin": "guójiā",
+      "english": "đất nước"
+    },
+    {
+      "chinese": "国外",
+      "pinyin": "guó wài",
+      "english": "nước ngoài"
+    },
+    {
+      "chinese": "过",
+      "pinyin": "guò",
+      "english": "qua"
+    },
+    {
+      "chinese": "还",
+      "pinyin": "hái",
+      "english": "còn; vẫn"
+    },
+    {
+      "chinese": "还是",
+      "pinyin": "háishi",
+      "english": "vẫn còn"
+    },
+    {
+      "chinese": "还有",
+      "pinyin": "hái yǒu",
+      "english": "còn có; ngoài ra"
+    },
+    {
+      "chinese": "孩子",
+      "pinyin": "háizi",
+      "english": "trẻ em"
+    },
+    {
+      "chinese": "汉语",
+      "pinyin": "hànyǔ",
+      "english": "tiếng Hán"
+    },
+    {
+      "chinese": "汉字",
+      "pinyin": "hàn zì",
+      "english": "chữ Hán"
+    },
+    {
+      "chinese": "好",
+      "pinyin": "hǎo",
+      "english": "tốt"
+    },
+    {
+      "chinese": "好吃",
+      "pinyin": "hǎochī",
+      "english": "ngon"
+    },
+    {
+      "chinese": "好看",
+      "pinyin": "hǎo kàn",
+      "english": "đẹp"
+    },
+    {
+      "chinese": "好听",
+      "pinyin": "hǎo tīng",
+      "english": "hay (nghe)"
+    },
+    {
+      "chinese": "好玩儿",
+      "pinyin": "hǎo wánr",
+      "english": "vui; thú vị"
+    },
+    {
+      "chinese": "号",
+      "pinyin": "hào",
+      "english": "số; ngày"
+    },
+    {
+      "chinese": "喝",
+      "pinyin": "hē",
+      "english": "uống"
+    },
+    {
+      "chinese": "和",
+      "pinyin": "hé",
+      "english": "và"
+    },
+    {
+      "chinese": "很",
+      "pinyin": "hěn",
+      "english": "rất"
+    },
+    {
+      "chinese": "后",
+      "pinyin": "hòu",
+      "english": "sau; đằng sau"
+    },
+    {
+      "chinese": "后边",
+      "pinyin": "hòu biān",
+      "english": "phía sau"
+    },
+    {
+      "chinese": "后天",
+      "pinyin": "hòu tiān",
+      "english": "ngày kia"
+    },
+    {
+      "chinese": "花",
+      "pinyin": "huā",
+      "english": "hoa"
+    },
+    {
+      "chinese": "话",
+      "pinyin": "huà",
+      "english": "lời nói"
+    },
+    {
+      "chinese": "坏",
+      "pinyin": "huài",
+      "english": "hỏng; xấu"
+    },
+    {
+      "chinese": "还",
+      "pinyin": "huán",
+      "english": "trả lại; trả tiền"
+    },
+    {
+      "chinese": "回",
+      "pinyin": "huí",
+      "english": "về; trở lại"
+    },
+    {
+      "chinese": "回答",
+      "pinyin": "huídá",
+      "english": "trả lời"
+    },
+    {
+      "chinese": "回到",
+      "pinyin": "huí dào",
+      "english": "trở về"
+    },
+    {
+      "chinese": "回家",
+      "pinyin": "huí jiā",
+      "english": "về nhà"
+    },
+    {
+      "chinese": "回来",
+      "pinyin": "huí lái",
+      "english": "trở lại"
+    },
+    {
+      "chinese": "回去",
+      "pinyin": "huí qù",
+      "english": "trở về"
+    },
+    {
+      "chinese": "会",
+      "pinyin": "huì",
+      "english": "có thể"
+    },
+    {
+      "chinese": "火车",
+      "pinyin": "huǒ chē",
+      "english": "tàu hỏa"
+    },
+    {
+      "chinese": "机场",
+      "pinyin": "jīchǎng",
+      "english": "sân bay"
+    },
+    {
+      "chinese": "机票",
+      "pinyin": "jī piào",
+      "english": "vé máy bay"
+    },
+    {
+      "chinese": "鸡蛋",
+      "pinyin": "jīdàn",
+      "english": "trứng gà"
+    },
+    {
+      "chinese": "几",
+      "pinyin": "jǐ",
+      "english": "vài"
+    },
+    {
+      "chinese": "记",
+      "pinyin": "jì",
+      "english": "nhớ"
+    },
+    {
+      "chinese": "记得",
+      "pinyin": "jìdé",
+      "english": "nhớ"
+    },
+    {
+      "chinese": "记住",
+      "pinyin": "jì zhù",
+      "english": "ghi nhớ"
+    },
+    {
+      "chinese": "家",
+      "pinyin": "jiā",
+      "english": "nhà"
+    },
+    {
+      "chinese": "家里",
+      "pinyin": "jiā lǐ",
+      "english": "trong nhà"
+    },
+    {
+      "chinese": "家人",
+      "pinyin": "jiā rén",
+      "english": "gia đình"
+    },
+    {
+      "chinese": "间",
+      "pinyin": "jiān",
+      "english": "giữa; lượng từ cho phòng"
+    },
+    {
+      "chinese": "见",
+      "pinyin": "jiàn",
+      "english": "thấy; gặp"
+    },
+    {
+      "chinese": "见面",
+      "pinyin": "jiànmiàn",
+      "english": "gặp mặt"
+    },
+    {
+      "chinese": "教",
+      "pinyin": "jiāo",
+      "english": "dạy"
+    },
+    {
+      "chinese": "叫",
+      "pinyin": "jiào",
+      "english": "gọi; được gọi là"
+    },
+    {
+      "chinese": "教学楼",
+      "pinyin": "jiào xué lóu",
+      "english": "tòa nhà giảng dạy"
+    },
+    {
+      "chinese": "姐姐",
+      "pinyin": "jiě jie",
+      "english": "chị gái"
+    },
+    {
+      "chinese": "介绍",
+      "pinyin": "jièshào",
+      "english": "giới thiệu"
+    },
+    {
+      "chinese": "今年",
+      "pinyin": "jīn nián",
+      "english": "năm nay"
+    },
+    {
+      "chinese": "今天",
+      "pinyin": "jīntiān",
+      "english": "hôm nay"
+    },
+    {
+      "chinese": "进",
+      "pinyin": "jìn",
+      "english": "vào"
+    },
+    {
+      "chinese": "进来",
+      "pinyin": "jìn lái",
+      "english": "vào trong"
+    },
+    {
+      "chinese": "进去",
+      "pinyin": "jìn qù",
+      "english": "đi vào"
+    },
+    {
+      "chinese": "九",
+      "pinyin": "jiǔ",
+      "english": "chín"
+    },
+    {
+      "chinese": "就",
+      "pinyin": "jiù",
+      "english": "ngay lập tức; thì"
+    },
+    {
+      "chinese": "觉得",
+      "pinyin": "juéde",
+      "english": "cảm thấy, cho rằng"
+    },
+    {
+      "chinese": "开",
+      "pinyin": "kāi",
+      "english": "mở"
+    },
+    {
+      "chinese": "开车",
+      "pinyin": "kāi chē",
+      "english": "lái xe"
+    },
+    {
+      "chinese": "开会",
+      "pinyin": "kāi huì",
+      "english": "họp"
+    },
+    {
+      "chinese": "开玩笑",
+      "pinyin": "kāi wán xiào",
+      "english": "đùa"
+    },
+    {
+      "chinese": "看",
+      "pinyin": "kàn",
+      "english": "xem"
+    },
+    {
+      "chinese": "看病",
+      "pinyin": "kàn bìng",
+      "english": "khám bệnh"
+    },
+    {
+      "chinese": "看到",
+      "pinyin": "kàn dào",
+      "english": "nhìn thấy"
+    },
+    {
+      "chinese": "看见",
+      "pinyin": "kànjiàn",
+      "english": "nhìn thấy"
+    },
+    {
+      "chinese": "考",
+      "pinyin": "kǎo",
+      "english": "kiểm tra; thi"
+    },
+    {
+      "chinese": "考试",
+      "pinyin": "kǎoshì",
+      "english": "kỳ thi"
+    },
+    {
+      "chinese": "渴",
+      "pinyin": "kě",
+      "english": "khát"
+    },
+    {
+      "chinese": "课",
+      "pinyin": "kè",
+      "english": "bài học"
+    },
+    {
+      "chinese": "课本",
+      "pinyin": "kè běn",
+      "english": "sách giáo khoa"
+    },
+    {
+      "chinese": "课文",
+      "pinyin": "kè wén",
+      "english": "bài khóa"
+    },
+    {
+      "chinese": "口",
+      "pinyin": "kǒu",
+      "english": "miệng"
+    },
+    {
+      "chinese": "块",
+      "pinyin": "kuài",
+      "english": "khối, đồng (tiền)"
+    },
+    {
+      "chinese": "快",
+      "pinyin": "kuài",
+      "english": "nhanh"
+    },
+    {
+      "chinese": "来",
+      "pinyin": "lái",
+      "english": "đến"
+    },
+    {
+      "chinese": "来到",
+      "pinyin": "lái dào",
+      "english": "đến; tới"
+    },
+    {
+      "chinese": "老",
+      "pinyin": "lǎo",
+      "english": "già"
+    },
+    {
+      "chinese": "老人",
+      "pinyin": "lǎo rén",
+      "english": "người già"
+    },
+    {
+      "chinese": "老师",
+      "pinyin": "lǎoshī",
+      "english": "giáo viên"
+    },
+    {
+      "chinese": "了",
+      "pinyin": "le",
+      "english": "trợ từ quá khứ"
+    },
+    {
+      "chinese": "累",
+      "pinyin": "lèi",
+      "english": "mệt"
+    },
+    {
+      "chinese": "冷",
+      "pinyin": "lěng",
+      "english": "lạnh"
+    },
+    {
+      "chinese": "里",
+      "pinyin": "lǐ",
+      "english": "trong"
+    },
+    {
+      "chinese": "里边",
+      "pinyin": "lǐ biān",
+      "english": "bên trong"
+    },
+    {
+      "chinese": "两",
+      "pinyin": "liǎng",
+      "english": "hai"
+    },
+    {
+      "chinese": "零｜〇",
+      "pinyin": "líng",
+      "english": "số không"
+    },
+    {
+      "chinese": "六",
+      "pinyin": "liù",
+      "english": "sáu"
+    },
+    {
+      "chinese": "楼",
+      "pinyin": "lóu",
+      "english": "tầng, lầu"
+    },
+    {
+      "chinese": "楼上",
+      "pinyin": "lóu shàng",
+      "english": "trên lầu"
+    },
+    {
+      "chinese": "楼下",
+      "pinyin": "lóu xià",
+      "english": "dưới lầu"
+    },
+    {
+      "chinese": "路",
+      "pinyin": "lù",
+      "english": "đường"
+    },
+    {
+      "chinese": "路口",
+      "pinyin": "lù kǒu",
+      "english": "ngã tư; giao lộ"
+    },
+    {
+      "chinese": "路上",
+      "pinyin": "lù shàng",
+      "english": "trên đường"
+    },
+    {
+      "chinese": "妈妈｜妈",
+      "pinyin": "māma ｜ mā",
+      "english": "mẹ"
+    },
+    {
+      "chinese": "马路",
+      "pinyin": "mǎ lù",
+      "english": "đường; phố"
+    },
+    {
+      "chinese": "马上",
+      "pinyin": "mǎshàng",
+      "english": "ngay lập tức"
+    },
+    {
+      "chinese": "吗",
+      "pinyin": "ma",
+      "english": "trợ từ nghi vấn"
+    },
+    {
+      "chinese": "买",
+      "pinyin": "mǎi",
+      "english": "mua"
+    },
+    {
+      "chinese": "慢",
+      "pinyin": "màn",
+      "english": "chậm"
+    },
+    {
+      "chinese": "忙",
+      "pinyin": "máng",
+      "english": "bận"
+    },
+    {
+      "chinese": "毛",
+      "pinyin": "máo",
+      "english": "đơn vị tiền tệ Trung Quốc"
+    },
+    {
+      "chinese": "没",
+      "pinyin": "méi",
+      "english": "không"
+    },
+    {
+      "chinese": "没关系",
+      "pinyin": "méiguānxi",
+      "english": "không sao"
+    },
+    {
+      "chinese": "没什么",
+      "pinyin": "méi shén me",
+      "english": "không có gì"
+    },
+    {
+      "chinese": "没事儿",
+      "pinyin": "méi shìr",
+      "english": "không sao"
+    },
+    {
+      "chinese": "没有",
+      "pinyin": "méi yǒu",
+      "english": "không có"
+    },
+    {
+      "chinese": "妹妹｜妹",
+      "pinyin": "mèimei ｜ mèi",
+      "english": "em gái"
+    },
+    {
+      "chinese": "门",
+      "pinyin": "mén",
+      "english": "cửa"
+    },
+    {
+      "chinese": "门口",
+      "pinyin": "mén kǒu",
+      "english": "cửa ra vào"
+    },
+    {
+      "chinese": "门票",
+      "pinyin": "mén piào",
+      "english": "vé vào cửa"
+    },
+    {
+      "chinese": "们（朋友们）",
+      "pinyin": "men (péngyou men)",
+      "english": "hậu tố số nhiều (bạn bè)"
+    },
+    {
+      "chinese": "米饭",
+      "pinyin": "mǐfàn",
+      "english": "cơm trắng"
+    },
+    {
+      "chinese": "面包",
+      "pinyin": "miànbāo",
+      "english": "bánh mì"
+    },
+    {
+      "chinese": "面条儿",
+      "pinyin": "miàn tiáor",
+      "english": "mì sợi"
+    },
+    {
+      "chinese": "名字",
+      "pinyin": "míngzi",
+      "english": "tên"
+    },
+    {
+      "chinese": "明白",
+      "pinyin": "míngbai",
+      "english": "hiểu, rõ ràng"
+    },
+    {
+      "chinese": "明年",
+      "pinyin": "míng nián",
+      "english": "năm sau"
+    },
+    {
+      "chinese": "明天",
+      "pinyin": "míngtiān",
+      "english": "ngày mai"
+    },
+    {
+      "chinese": "拿",
+      "pinyin": "ná",
+      "english": "cầm, lấy"
+    },
+    {
+      "chinese": "哪",
+      "pinyin": "nǎ",
+      "english": "nào"
+    },
+    {
+      "chinese": "哪里",
+      "pinyin": "nǎ lǐ",
+      "english": "ở đâu"
+    },
+    {
+      "chinese": "哪儿",
+      "pinyin": "nǎr",
+      "english": "ở đâu"
+    },
+    {
+      "chinese": "哪些",
+      "pinyin": "nǎ xiē",
+      "english": "những cái nào"
+    },
+    {
+      "chinese": "那",
+      "pinyin": "nà",
+      "english": "đó"
+    },
+    {
+      "chinese": "那边",
+      "pinyin": "nà biān",
+      "english": "ở đó"
+    },
+    {
+      "chinese": "那里",
+      "pinyin": "nà lǐ",
+      "english": "ở đó"
+    },
+    {
+      "chinese": "那儿",
+      "pinyin": "nàr",
+      "english": "ở đó"
+    },
+    {
+      "chinese": "那些",
+      "pinyin": "nà xiē",
+      "english": "những cái đó"
+    },
+    {
+      "chinese": "奶",
+      "pinyin": "nǎi",
+      "english": "sữa"
+    },
+    {
+      "chinese": "奶奶",
+      "pinyin": "nǎinai",
+      "english": "bà nội"
+    },
+    {
+      "chinese": "男",
+      "pinyin": "nán",
+      "english": "nam"
+    },
+    {
+      "chinese": "男孩儿",
+      "pinyin": "nán háir",
+      "english": "bé trai"
+    },
+    {
+      "chinese": "男朋友",
+      "pinyin": "nán péng yǒu",
+      "english": "bạn trai"
+    },
+    {
+      "chinese": "男人",
+      "pinyin": "nán ren",
+      "english": "đàn ông"
+    },
+    {
+      "chinese": "男生",
+      "pinyin": "nán shēng",
+      "english": "nam sinh"
+    },
+    {
+      "chinese": "南",
+      "pinyin": "nán",
+      "english": "nam"
+    },
+    {
+      "chinese": "南边",
+      "pinyin": "nán biān",
+      "english": "phía nam"
+    },
+    {
+      "chinese": "难",
+      "pinyin": "nán",
+      "english": "khó"
+    },
+    {
+      "chinese": "呢",
+      "pinyin": "ne",
+      "english": "trợ từ"
+    },
+    {
+      "chinese": "能",
+      "pinyin": "néng",
+      "english": "có thể"
+    },
+    {
+      "chinese": "你",
+      "pinyin": "nǐ",
+      "english": "bạn"
+    },
+    {
+      "chinese": "你们",
+      "pinyin": "nǐ men",
+      "english": "các bạn"
+    },
+    {
+      "chinese": "年",
+      "pinyin": "nián",
+      "english": "năm"
+    },
+    {
+      "chinese": "您",
+      "pinyin": "nín",
+      "english": "ông/bà/ngài (kính ngữ)"
+    },
+    {
+      "chinese": "牛奶",
+      "pinyin": "niúnǎi",
+      "english": "sữa bò"
+    },
+    {
+      "chinese": "女",
+      "pinyin": "nǚ",
+      "english": "nữ"
+    },
+    {
+      "chinese": "女儿",
+      "pinyin": "nǚ’ér",
+      "english": "con gái"
+    },
+    {
+      "chinese": "女孩儿",
+      "pinyin": "nǚ háir",
+      "english": "bé gái"
+    },
+    {
+      "chinese": "女朋友",
+      "pinyin": "nǚ péng yǒu",
+      "english": "bạn gái"
+    },
+    {
+      "chinese": "女人",
+      "pinyin": "nǚ ren",
+      "english": "phụ nữ"
+    },
+    {
+      "chinese": "女生",
+      "pinyin": "nǚ shēng",
+      "english": "nữ sinh"
+    },
+    {
+      "chinese": "旁边",
+      "pinyin": "pángbiān",
+      "english": "bên cạnh"
+    },
+    {
+      "chinese": "跑",
+      "pinyin": "pǎo",
+      "english": "chạy"
+    },
+    {
+      "chinese": "朋友",
+      "pinyin": "péngyou",
+      "english": "bạn bè"
+    },
+    {
+      "chinese": "票",
+      "pinyin": "piào",
+      "english": "vé"
+    },
+    {
+      "chinese": "七",
+      "pinyin": "qī",
+      "english": "bảy"
+    },
+    {
+      "chinese": "起",
+      "pinyin": "qǐ",
+      "english": "đứng dậy; bắt đầu; lên"
+    },
+    {
+      "chinese": "起床",
+      "pinyin": "qǐchuáng",
+      "english": "thức dậy"
+    },
+    {
+      "chinese": "起来",
+      "pinyin": "qǐlái",
+      "english": "đứng dậy"
+    },
+    {
+      "chinese": "汽车",
+      "pinyin": "qì chē",
+      "english": "ô tô"
+    },
+    {
+      "chinese": "前",
+      "pinyin": "qián",
+      "english": "trước"
+    },
+    {
+      "chinese": "前边",
+      "pinyin": "qián biān",
+      "english": "phía trước"
+    },
+    {
+      "chinese": "前天",
+      "pinyin": "qián tiān",
+      "english": "ngày hôm kia"
+    },
+    {
+      "chinese": "钱",
+      "pinyin": "qián",
+      "english": "tiền"
+    },
+    {
+      "chinese": "钱包",
+      "pinyin": "qián bāo",
+      "english": "ví"
+    },
+    {
+      "chinese": "请",
+      "pinyin": "qǐng",
+      "english": "xin mời"
+    },
+    {
+      "chinese": "请假",
+      "pinyin": "qǐngjià",
+      "english": "xin nghỉ phép"
+    },
+    {
+      "chinese": "请进",
+      "pinyin": "qǐng jìn",
+      "english": "mời vào"
+    },
+    {
+      "chinese": "请问",
+      "pinyin": "qǐng wèn",
+      "english": "xin hỏi"
+    },
+    {
+      "chinese": "请坐",
+      "pinyin": "qǐng zuò",
+      "english": "mời ngồi"
+    },
+    {
+      "chinese": "球",
+      "pinyin": "qiú",
+      "english": "bóng"
+    },
+    {
+      "chinese": "去",
+      "pinyin": "qù",
+      "english": "đi"
+    },
+    {
+      "chinese": "去年",
+      "pinyin": "qùnián",
+      "english": "năm ngoái"
+    },
+    {
+      "chinese": "热",
+      "pinyin": "rè",
+      "english": "nóng"
+    },
+    {
+      "chinese": "人",
+      "pinyin": "rén",
+      "english": "người"
+    },
+    {
+      "chinese": "认识",
+      "pinyin": "rènshi",
+      "english": "quen biết"
+    },
+    {
+      "chinese": "认真",
+      "pinyin": "rènzhēn",
+      "english": "nghiêm túc"
+    },
+    {
+      "chinese": "日",
+      "pinyin": "rì",
+      "english": "ngày"
+    },
+    {
+      "chinese": "日期",
+      "pinyin": "rìqī",
+      "english": "ngày tháng"
+    },
+    {
+      "chinese": "肉",
+      "pinyin": "ròu",
+      "english": "thịt"
+    },
+    {
+      "chinese": "三",
+      "pinyin": "sān",
+      "english": "ba"
+    },
+    {
+      "chinese": "山",
+      "pinyin": "shān",
+      "english": "núi"
+    },
+    {
+      "chinese": "商场",
+      "pinyin": "shāng chǎng",
+      "english": "trung tâm thương mại"
+    },
+    {
+      "chinese": "商店",
+      "pinyin": "shāngdiàn",
+      "english": "cửa hàng"
+    },
+    {
+      "chinese": "上",
+      "pinyin": "shàng",
+      "english": "trên"
+    },
+    {
+      "chinese": "上班",
+      "pinyin": "shàngbān",
+      "english": "đi làm"
+    },
+    {
+      "chinese": "上边",
+      "pinyin": "shàng biān",
+      "english": "bên trên"
+    },
+    {
+      "chinese": "上车",
+      "pinyin": "shàng chē",
+      "english": "lên xe"
+    },
+    {
+      "chinese": "上次",
+      "pinyin": "shàng cì",
+      "english": "lần trước"
+    },
+    {
+      "chinese": "上课",
+      "pinyin": "shàng kè",
+      "english": "lên lớp; có tiết học"
+    },
+    {
+      "chinese": "上网",
+      "pinyin": "shàngwǎng",
+      "english": "lướt mạng"
+    },
+    {
+      "chinese": "上午",
+      "pinyin": "shàngwǔ",
+      "english": "buổi sáng"
+    },
+    {
+      "chinese": "上学",
+      "pinyin": "shàng xué",
+      "english": "đi học"
+    },
+    {
+      "chinese": "少",
+      "pinyin": "shǎo",
+      "english": "ít"
+    },
+    {
+      "chinese": "谁",
+      "pinyin": "shéi",
+      "english": "ai"
+    },
+    {
+      "chinese": "身上",
+      "pinyin": "shēn shàng",
+      "english": "trên người"
+    },
+    {
+      "chinese": "身体",
+      "pinyin": "shēntǐ",
+      "english": "cơ thể, sức khỏe"
+    },
+    {
+      "chinese": "什么",
+      "pinyin": "shénme",
+      "english": "cái gì"
+    },
+    {
+      "chinese": "生病",
+      "pinyin": "shēngbìng",
+      "english": "bị ốm"
+    },
+    {
+      "chinese": "生气",
+      "pinyin": "shēngqì",
+      "english": "tức giận"
+    },
+    {
+      "chinese": "生日",
+      "pinyin": "shēngrì",
+      "english": "sinh nhật"
+    },
+    {
+      "chinese": "十",
+      "pinyin": "shí",
+      "english": "mười"
+    },
+    {
+      "chinese": "时候",
+      "pinyin": "shíhou",
+      "english": "lúc, khi"
+    },
+    {
+      "chinese": "时间",
+      "pinyin": "shíjiān",
+      "english": "thời gian"
+    },
+    {
+      "chinese": "事",
+      "pinyin": "shì",
+      "english": "việc"
+    },
+    {
+      "chinese": "试",
+      "pinyin": "shì",
+      "english": "thử"
+    },
+    {
+      "chinese": "是",
+      "pinyin": "shì",
+      "english": "là, phải"
+    },
+    {
+      "chinese": "是不是",
+      "pinyin": "shì bú shì",
+      "english": "có phải không?"
+    },
+    {
+      "chinese": "手",
+      "pinyin": "shǒu",
+      "english": "tay"
+    },
+    {
+      "chinese": "手机",
+      "pinyin": "shǒujī",
+      "english": "điện thoại di động"
+    },
+    {
+      "chinese": "书",
+      "pinyin": "shū",
+      "english": "sách"
+    },
+    {
+      "chinese": "书包",
+      "pinyin": "shū bāo",
+      "english": "cặp sách"
+    },
+    {
+      "chinese": "书店",
+      "pinyin": "shū diàn",
+      "english": "hiệu sách"
+    },
+    {
+      "chinese": "树",
+      "pinyin": "shù",
+      "english": "cây"
+    },
+    {
+      "chinese": "水",
+      "pinyin": "shuǐ",
+      "english": "nước"
+    },
+    {
+      "chinese": "水果",
+      "pinyin": "shuǐguǒ",
+      "english": "hoa quả"
+    },
+    {
+      "chinese": "睡",
+      "pinyin": "shuì",
+      "english": "ngủ"
+    },
+    {
+      "chinese": "睡觉",
+      "pinyin": "shuìjiào",
+      "english": "ngủ"
+    },
+    {
+      "chinese": "说",
+      "pinyin": "shuō",
+      "english": "nói"
+    },
+    {
+      "chinese": "说话",
+      "pinyin": "shuōhuà",
+      "english": "nói chuyện"
+    },
+    {
+      "chinese": "四",
+      "pinyin": "sì",
+      "english": "bốn"
+    },
+    {
+      "chinese": "送",
+      "pinyin": "sòng",
+      "english": "tặng, tiễn"
+    },
+    {
+      "chinese": "岁",
+      "pinyin": "suì",
+      "english": "tuổi"
+    },
+    {
+      "chinese": "他",
+      "pinyin": "tā",
+      "english": "anh ấy"
+    },
+    {
+      "chinese": "他们",
+      "pinyin": "tā men",
+      "english": "họ (nam)"
+    },
+    {
+      "chinese": "她",
+      "pinyin": "tā",
+      "english": "cô ấy"
+    },
+    {
+      "chinese": "她们",
+      "pinyin": "tā men",
+      "english": "họ (nữ)"
+    },
+    {
+      "chinese": "太",
+      "pinyin": "tài",
+      "english": "quá, lắm"
+    },
+    {
+      "chinese": "天",
+      "pinyin": "tiān",
+      "english": "ngày, trời"
+    },
+    {
+      "chinese": "天气",
+      "pinyin": "tiānqì",
+      "english": "thời tiết"
+    },
+    {
+      "chinese": "听",
+      "pinyin": "tīng",
+      "english": "nghe"
+    },
+    {
+      "chinese": "听到",
+      "pinyin": "tīng dào",
+      "english": "nghe thấy"
+    },
+    {
+      "chinese": "听见",
+      "pinyin": "tīng jiàn",
+      "english": "nghe thấy"
+    },
+    {
+      "chinese": "听写",
+      "pinyin": "tīng xiě",
+      "english": "nghe viết"
+    },
+    {
+      "chinese": "同学",
+      "pinyin": "tóngxué",
+      "english": "bạn học"
+    },
+    {
+      "chinese": "图书馆",
+      "pinyin": "túshūguǎn",
+      "english": "thư viện"
+    },
+    {
+      "chinese": "外",
+      "pinyin": "wài",
+      "english": "ngoài, bên ngoài"
+    },
+    {
+      "chinese": "外边",
+      "pinyin": "wài biān",
+      "english": "bên ngoài"
+    },
+    {
+      "chinese": "外国",
+      "pinyin": "wài guó",
+      "english": "nước ngoài"
+    },
+    {
+      "chinese": "外语",
+      "pinyin": "wài yǔ",
+      "english": "ngoại ngữ"
+    },
+    {
+      "chinese": "玩儿",
+      "pinyin": "wánr",
+      "english": "chơi"
+    },
+    {
+      "chinese": "晚",
+      "pinyin": "wǎn",
+      "english": "muộn"
+    },
+    {
+      "chinese": "晚饭",
+      "pinyin": "wǎn fàn",
+      "english": "bữa tối"
+    },
+    {
+      "chinese": "晚上",
+      "pinyin": "wǎnshang",
+      "english": "buổi tối"
+    },
+    {
+      "chinese": "网上",
+      "pinyin": "wǎng shàng",
+      "english": "trên mạng"
+    },
+    {
+      "chinese": "网友",
+      "pinyin": "wǎng yǒu",
+      "english": "bạn trên mạng"
+    },
+    {
+      "chinese": "忘",
+      "pinyin": "wàng",
+      "english": "quên"
+    },
+    {
+      "chinese": "忘记",
+      "pinyin": "wàngjì",
+      "english": "quên"
+    },
+    {
+      "chinese": "问",
+      "pinyin": "wèn",
+      "english": "hỏi"
+    },
+    {
+      "chinese": "我",
+      "pinyin": "wǒ",
+      "english": "tôi"
+    },
+    {
+      "chinese": "我们",
+      "pinyin": "wǒmen",
+      "english": "chúng tôi"
+    },
+    {
+      "chinese": "五",
+      "pinyin": "wǔ",
+      "english": "năm"
+    },
+    {
+      "chinese": "午饭",
+      "pinyin": "wǔ fàn",
+      "english": "bữa trưa"
+    },
+    {
+      "chinese": "西",
+      "pinyin": "xī",
+      "english": "tây"
+    },
+    {
+      "chinese": "西边",
+      "pinyin": "xī biān",
+      "english": "phía tây"
+    },
+    {
+      "chinese": "洗",
+      "pinyin": "xǐ",
+      "english": "rửa"
+    },
+    {
+      "chinese": "洗手间",
+      "pinyin": "xǐshǒujiān",
+      "english": "nhà vệ sinh"
+    },
+    {
+      "chinese": "喜欢",
+      "pinyin": "xǐhuan",
+      "english": "thích"
+    },
+    {
+      "chinese": "下",
+      "pinyin": "xià",
+      "english": "dưới; tiếp theo; đi xuống; xuống (xe)"
+    },
+    {
+      "chinese": "下班",
+      "pinyin": "xià bān",
+      "english": "tan làm"
+    },
+    {
+      "chinese": "下边",
+      "pinyin": "xià biān",
+      "english": "bên dưới"
+    },
+    {
+      "chinese": "下车",
+      "pinyin": "xià chē",
+      "english": "xuống xe"
+    },
+    {
+      "chinese": "下次",
+      "pinyin": "xià cì",
+      "english": "lần tới"
+    },
+    {
+      "chinese": "下课",
+      "pinyin": "xià kè",
+      "english": "tan học"
+    },
+    {
+      "chinese": "下午",
+      "pinyin": "xiàwǔ",
+      "english": "buổi chiều"
+    },
+    {
+      "chinese": "下雨",
+      "pinyin": "xiàyǔ",
+      "english": "mưa"
+    },
+    {
+      "chinese": "先",
+      "pinyin": "xiān",
+      "english": "trước"
+    },
+    {
+      "chinese": "先生",
+      "pinyin": "xiānsheng",
+      "english": "ông, ngài"
+    },
+    {
+      "chinese": "现在",
+      "pinyin": "xiànzài",
+      "english": "bây giờ"
+    },
+    {
+      "chinese": "想",
+      "pinyin": "xiǎng",
+      "english": "nghĩ, muốn"
+    },
+    {
+      "chinese": "小",
+      "pinyin": "xiǎo",
+      "english": "nhỏ"
+    },
+    {
+      "chinese": "小孩儿",
+      "pinyin": "xiǎo háir",
+      "english": "trẻ em; trẻ con"
+    },
+    {
+      "chinese": "小姐",
+      "pinyin": "xiǎojiě",
+      "english": "cô, tiểu thư"
+    },
+    {
+      "chinese": "小朋友",
+      "pinyin": "xiǎo péng yǒu",
+      "english": "trẻ em; trẻ con"
+    },
+    {
+      "chinese": "小时",
+      "pinyin": "xiǎoshí",
+      "english": "giờ"
+    },
+    {
+      "chinese": "小学",
+      "pinyin": "xiǎo xué",
+      "english": "trường tiểu học"
+    },
+    {
+      "chinese": "小学生",
+      "pinyin": "xiǎo xué shēng",
+      "english": "học sinh tiểu học"
+    },
+    {
+      "chinese": "笑",
+      "pinyin": "xiào",
+      "english": "cười"
+    },
+    {
+      "chinese": "写",
+      "pinyin": "xiě",
+      "english": "viết"
+    },
+    {
+      "chinese": "谢谢",
+      "pinyin": "xièxie",
+      "english": "cảm ơn"
+    },
+    {
+      "chinese": "新",
+      "pinyin": "xīn",
+      "english": "mới"
+    },
+    {
+      "chinese": "新年",
+      "pinyin": "xīn nián",
+      "english": "năm mới"
+    },
+    {
+      "chinese": "星期",
+      "pinyin": "xīngqī",
+      "english": "tuần"
+    },
+    {
+      "chinese": "星期日",
+      "pinyin": "xīng qī rì",
+      "english": "chủ nhật"
+    },
+    {
+      "chinese": "星期天",
+      "pinyin": "xīng qī tiān",
+      "english": "chủ nhật"
+    },
+    {
+      "chinese": "行",
+      "pinyin": "xíng",
+      "english": "được, ổn"
+    },
+    {
+      "chinese": "休息",
+      "pinyin": "xiūxi",
+      "english": "nghỉ ngơi"
+    },
+    {
+      "chinese": "学",
+      "pinyin": "xué",
+      "english": "học"
+    },
+    {
+      "chinese": "学生",
+      "pinyin": "xuésheng",
+      "english": "học sinh"
+    },
+    {
+      "chinese": "学习",
+      "pinyin": "xuéxí",
+      "english": "học tập"
+    },
+    {
+      "chinese": "学校",
+      "pinyin": "xuéxiào",
+      "english": "trường học"
+    },
+    {
+      "chinese": "学院",
+      "pinyin": "xué yuàn",
+      "english": "học viện; trường cao đẳng"
+    },
+    {
+      "chinese": "要（动）",
+      "pinyin": "yào",
+      "english": "muốn"
+    },
+    {
+      "chinese": "爷爷",
+      "pinyin": "yéye",
+      "english": "ông nội"
+    },
+    {
+      "chinese": "也",
+      "pinyin": "yě",
+      "english": "cũng"
+    },
+    {
+      "chinese": "页",
+      "pinyin": "yè",
+      "english": "trang"
+    },
+    {
+      "chinese": "一",
+      "pinyin": "yī",
+      "english": "một"
+    },
+    {
+      "chinese": "衣服",
+      "pinyin": "yīfu",
+      "english": "quần áo"
+    },
+    {
+      "chinese": "医生",
+      "pinyin": "yīshēng",
+      "english": "bác sĩ"
+    },
+    {
+      "chinese": "医院",
+      "pinyin": "yīyuàn",
+      "english": "bệnh viện"
+    },
+    {
+      "chinese": "一半",
+      "pinyin": "yí bàn",
+      "english": "một nửa"
+    },
+    {
+      "chinese": "一会儿",
+      "pinyin": "yíhuìr",
+      "english": "một lát"
+    },
+    {
+      "chinese": "一块儿",
+      "pinyin": "yí kuàir",
+      "english": "cùng nhau"
+    },
+    {
+      "chinese": "一下儿",
+      "pinyin": "yí xiàr",
+      "english": "một chút"
+    },
+    {
+      "chinese": "一样",
+      "pinyin": "yíyàng",
+      "english": "giống nhau"
+    },
+    {
+      "chinese": "一边",
+      "pinyin": "yìbiān",
+      "english": "một bên"
+    },
+    {
+      "chinese": "一点儿",
+      "pinyin": "yīdiǎnr",
+      "english": "một chút"
+    },
+    {
+      "chinese": "一起",
+      "pinyin": "yìqǐ",
+      "english": "cùng nhau"
+    },
+    {
+      "chinese": "一些",
+      "pinyin": "yì xiē",
+      "english": "một vài"
+    },
+    {
+      "chinese": "用",
+      "pinyin": "yòng",
+      "english": "dùng"
+    },
+    {
+      "chinese": "有",
+      "pinyin": "yǒu",
+      "english": "có"
+    },
+    {
+      "chinese": "有的",
+      "pinyin": "yǒu de",
+      "english": "một số"
+    },
+    {
+      "chinese": "有名",
+      "pinyin": "yǒumíng",
+      "english": "nổi tiếng"
+    },
+    {
+      "chinese": "有时候｜有时",
+      "pinyin": "yǒu shí hòu ｜ yǒu shí",
+      "english": "đôi khi"
+    },
+    {
+      "chinese": "有（一）些",
+      "pinyin": "yǒu （ yì ） xiē",
+      "english": "một số"
+    },
+    {
+      "chinese": "有用",
+      "pinyin": "yǒu yòng",
+      "english": "hữu ích"
+    },
+    {
+      "chinese": "右",
+      "pinyin": "yòu",
+      "english": "phải"
+    },
+    {
+      "chinese": "右边",
+      "pinyin": "yòubian",
+      "english": "bên phải"
+    },
+    {
+      "chinese": "雨",
+      "pinyin": "yǔ",
+      "english": "mưa"
+    },
+    {
+      "chinese": "元",
+      "pinyin": "yuán",
+      "english": "tệ (đơn vị tiền tệ)"
+    },
+    {
+      "chinese": "远",
+      "pinyin": "yuǎn",
+      "english": "xa"
+    },
+    {
+      "chinese": "月",
+      "pinyin": "yuè",
+      "english": "tháng"
+    },
+    {
+      "chinese": "再",
+      "pinyin": "zài",
+      "english": "lại, nữa"
+    },
+    {
+      "chinese": "再见",
+      "pinyin": "zàijiàn",
+      "english": "tạm biệt"
+    },
+    {
+      "chinese": "在",
+      "pinyin": "zài",
+      "english": "ở; đang"
+    },
+    {
+      "chinese": "在家",
+      "pinyin": "zài jiā",
+      "english": "ở nhà"
+    },
+    {
+      "chinese": "早",
+      "pinyin": "zǎo",
+      "english": "sớm"
+    },
+    {
+      "chinese": "早饭",
+      "pinyin": "zǎo fàn",
+      "english": "bữa sáng"
+    },
+    {
+      "chinese": "早上",
+      "pinyin": "zǎoshang",
+      "english": "buổi sáng"
+    },
+    {
+      "chinese": "怎么",
+      "pinyin": "zěnme",
+      "english": "thế nào, làm sao"
+    },
+    {
+      "chinese": "站（名）",
+      "pinyin": "zhàn",
+      "english": "trạm, ga"
+    },
+    {
+      "chinese": "找",
+      "pinyin": "zhǎo",
+      "english": "tìm"
+    },
+    {
+      "chinese": "找到",
+      "pinyin": "zhǎo dào",
+      "english": "tìm thấy"
+    },
+    {
+      "chinese": "这",
+      "pinyin": "zhè",
+      "english": "đây (ở đây)"
+    },
+    {
+      "chinese": "这边",
+      "pinyin": "zhè biān",
+      "english": "ở đây"
+    },
+    {
+      "chinese": "这里",
+      "pinyin": "zhè lǐ",
+      "english": "ở đây"
+    },
+    {
+      "chinese": "这儿",
+      "pinyin": "zhèr",
+      "english": "ở đây"
+    },
+    {
+      "chinese": "这些",
+      "pinyin": "zhè xiē",
+      "english": "những cái này"
+    },
+    {
+      "chinese": "着",
+      "pinyin": "zhe",
+      "english": "đang (biểu thị trạng thái đang diễn ra)"
+    },
+    {
+      "chinese": "真",
+      "pinyin": "zhēn",
+      "english": "thật"
+    },
+    {
+      "chinese": "真的",
+      "pinyin": "zhēn de",
+      "english": "thật sự"
+    },
+    {
+      "chinese": "正（副）",
+      "pinyin": "zhèng",
+      "english": "vừa; chính xác"
+    },
+    {
+      "chinese": "正在",
+      "pinyin": "zhèngzài",
+      "english": "đang"
+    },
+    {
+      "chinese": "知道",
+      "pinyin": "zhīdào",
+      "english": "biết"
+    },
+    {
+      "chinese": "知识",
+      "pinyin": "zhīshi",
+      "english": "kiến thức"
+    },
+    {
+      "chinese": "中",
+      "pinyin": "zhōng",
+      "english": "giữa; trong"
+    },
+    {
+      "chinese": "中国",
+      "pinyin": "zhōngguó",
+      "english": "Trung Quốc"
+    },
+    {
+      "chinese": "中间",
+      "pinyin": "zhōngjiān",
+      "english": "ở giữa"
+    },
+    {
+      "chinese": "中文",
+      "pinyin": "zhōngwén",
+      "english": "tiếng Trung"
+    },
+    {
+      "chinese": "中午",
+      "pinyin": "zhōngwǔ",
+      "english": "buổi trưa"
+    },
+    {
+      "chinese": "中学",
+      "pinyin": "zhōng xué",
+      "english": "trường cấp hai"
+    },
+    {
+      "chinese": "中学生",
+      "pinyin": "zhōng xué shēng",
+      "english": "học sinh cấp hai"
+    },
+    {
+      "chinese": "重",
+      "pinyin": "zhòng",
+      "english": "nặng"
+    },
+    {
+      "chinese": "重要",
+      "pinyin": "zhòngyào",
+      "english": "quan trọng"
+    },
+    {
+      "chinese": "住",
+      "pinyin": "zhù",
+      "english": "sống, ở"
+    },
+    {
+      "chinese": "准备",
+      "pinyin": "zhǔnbèi",
+      "english": "chuẩn bị"
+    },
+    {
+      "chinese": "桌子",
+      "pinyin": "zhuōzi",
+      "english": "cái bàn"
+    },
+    {
+      "chinese": "字",
+      "pinyin": "zì",
+      "english": "chữ"
+    },
+    {
+      "chinese": "子（桌子）",
+      "pinyin": "zi （ zhuō zi ）",
+      "english": "hậu tố danh từ (bàn)"
+    },
+    {
+      "chinese": "走",
+      "pinyin": "zǒu",
+      "english": "đi"
+    },
+    {
+      "chinese": "走路",
+      "pinyin": "zǒu lù",
+      "english": "đi bộ"
+    },
+    {
+      "chinese": "最",
+      "pinyin": "zuì",
+      "english": "nhất"
+    },
+    {
+      "chinese": "最好",
+      "pinyin": "zuìhǎo",
+      "english": "tốt nhất"
+    },
+    {
+      "chinese": "最后",
+      "pinyin": "zuìhòu",
+      "english": "cuối cùng"
+    },
+    {
+      "chinese": "昨天",
+      "pinyin": "zuótiān",
+      "english": "hôm qua"
+    },
+    {
+      "chinese": "左",
+      "pinyin": "zuǒ",
+      "english": "trái"
+    },
+    {
+      "chinese": "左边",
+      "pinyin": "zuǒbian",
+      "english": "bên trái"
+    },
+    {
+      "chinese": "坐",
+      "pinyin": "zuò",
+      "english": "ngồi"
+    },
+    {
+      "chinese": "坐下",
+      "pinyin": "zuò xià",
+      "english": "ngồi xuống"
+    },
+    {
+      "chinese": "做",
+      "pinyin": "zuò",
+      "english": "làm"
+    }
+  ]
+}
